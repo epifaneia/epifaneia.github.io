@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Epifaneia · Daniel Martín</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="description" content="Diseño de soluciones de IA. Código, IA y regulación. / AI solution design. Code, AI and regulation.">
+<style>
+:root{
+  --bg:#ffffff; --tinta:#1c2431; --suave:#6b7480; --linea:#e6e9ee;
+  --navy:#1e3a6e; --azul:#3f6fb5; --azul-bg:#eef3fa; --naranja:#c8692c; --naranja-bg:#fbeee4;
+  --salvia:#eaf2e6; --gris:#f4f6f9; --verde:#2f7a4c;
+  --sans:"Aptos","Segoe UI Variable","Segoe UI","Inter",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+  --mono:"Cascadia Code","JetBrains Mono",Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tinta);font:17px/1.65 var(--sans)}
+a{color:var(--azul);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:0 28px}
+body.es .en{display:none!important}
+body.en .es{display:none!important}
+/* cabecera */
+header{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea);z-index:10}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);font-size:.92rem}
+.logo b{font-weight:300;color:var(--azul)}
+nav a{color:var(--suave);font-size:.9rem;margin-left:20px}
+nav a:hover{color:var(--navy);text-decoration:none}
+.lang{margin-left:22px;font:600 .76rem var(--mono);border:1px solid var(--linea);border-radius:999px;padding:4px 11px;cursor:pointer;color:var(--suave);background:#fff}
+.lang span.on{color:var(--navy)}
+/* hero */
+.hero-bg{background:linear-gradient(180deg,#f3f7fb 0%,#ffffff 70%)}
+.hero{padding:96px 0 72px;display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:2.9rem;line-height:1.1;margin:0 0 16px;letter-spacing:-.02em;font-weight:600;color:var(--navy)}
+.hero .claim{font-size:1.28rem;line-height:1.45;color:var(--tinta);margin:0 0 22px;max-width:560px}
+.hero .frases{font-size:1rem;color:var(--suave);margin:0 0 30px;line-height:1.6}
+.hero .frases span{display:block}
+.foto{aspect-ratio:1/1;border-radius:16px;background:linear-gradient(160deg,#eef3fa,#f7f9fc);border:1px solid var(--linea);display:flex;align-items:center;justify-content:center;color:var(--suave);font:.8rem var(--mono);text-align:center;overflow:hidden}
+.foto img{width:100%;height:100%;object-fit:cover}
+.cta{display:inline-block;background:var(--navy);color:#fff;font-weight:600;padding:11px 20px;border-radius:8px}
+.cta:hover{text-decoration:none;background:#274a89}
+.cta2{display:inline-block;color:var(--navy);border:1px solid var(--linea);background:#fff;padding:11px 20px;border-radius:8px;margin-left:10px}
+.cta2:hover{text-decoration:none;border-color:var(--azul)}
+/* secciones */
+section{padding:72px 0}
+section+section{border-top:1px solid var(--linea)}
+h2{font-size:1.75rem;margin:0 0 6px;letter-spacing:-.015em;color:var(--navy);font-weight:600}
+h2 .k{display:block;font:600 .72rem var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--azul);margin-bottom:10px}
+.lede{color:var(--suave);font-size:1.08rem;margin:0 0 30px;max-width:740px}
+h3{font-size:1.08rem;margin:0 0 8px;color:var(--navy)}
+p{margin:0 0 14px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:6px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--gris);border-radius:12px;padding:22px 24px;border:1px solid transparent}
+.card.b{background:var(--azul-bg)} .card.s{background:var(--salvia)} .card.o{background:var(--naranja-bg)}
+.card .cab{display:block;font:600 .72rem var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--navy);padding:8px 12px;border-radius:8px;margin:-8px -10px 16px;text-align:center}
+.card.o .cab{background:var(--naranja)} .card.s .cab{background:var(--verde)} .card.b .cab{background:var(--azul)}
+.card p{font-size:.95rem}
+.card ul{font-size:.92rem;padding-left:18px}
+.card .l{margin-top:14px;font-size:.92rem;font-weight:600}
+.pill{display:inline-block;font:600 .64rem var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:999px;color:#fff;vertical-align:middle;margin-left:6px}
+.pill.t{background:var(--naranja)} .pill.n{background:var(--azul)}
+/* pasos */
+.pasos{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:26px 0 18px}
+.paso{border-radius:12px;padding:16px 14px;min-height:170px;background:var(--salvia)}
+.paso.llm{background:var(--naranja-bg)}
+.paso b{display:block;font:600 .7rem var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--verde);margin-bottom:8px}
+.paso.llm b{color:var(--naranja)}
+.paso span{display:block;font-size:.88rem;line-height:1.45}
+.leyenda{display:flex;gap:18px;flex-wrap:wrap;font-size:.82rem;color:var(--suave)}
+.leyenda i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+/* bandas de regulación (como el pdf) */
+.banda{display:grid;grid-template-columns:300px 1fr;border:1px solid var(--linea);border-radius:10px;overflow:hidden;margin-bottom:10px}
+.banda .t{padding:12px 16px;color:#fff;font:600 .78rem var(--sans);letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center}
+.banda .d{padding:12px 16px;font-size:.95rem;background:#fff}
+.banda.b1 .t{background:var(--navy)} .banda.b2 .t{background:var(--azul)} .banda.b3 .t{background:var(--naranja)}
+/* repos */
+.repos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.repo{border:1px solid var(--linea);border-radius:12px;padding:20px 22px;background:#fff}
+.repo .k{font:600 .68rem var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--azul);margin-bottom:6px}
+.repo h3{margin-bottom:6px}
+.repo p{font-size:.93rem;color:var(--suave)}
+.repo .l{font-weight:600;font-size:.92rem}
+.cierre{font-size:1.25rem;color:var(--navy);font-weight:600;margin:28px 0 0}
+footer{padding:44px 0 64px;border-top:1px solid var(--linea);color:var(--suave);font-size:.9rem}
+footer .sutil{margin-top:22px;font-size:.82rem;color:#9aa3ad}
+footer .sutil a{color:#9aa3ad}
+@media (max-width:800px){
+  .hero{grid-template-columns:1fr;padding:56px 0 40px}
+  .hero h1{font-size:2.2rem}
+  .foto{max-width:240px}
+  .grid3,.repos,.pasos{grid-template-columns:1fr}
+  .banda{grid-template-columns:1fr}
+  nav a{margin-left:12px;font-size:.82rem}
+}
+</style>
+</head>
+<body class="es">
+
+<header>
+<div class="wrap">
+  <a class="logo" href="#top" style="display:flex;align-items:center;gap:10px"><img src="logo-icono.png" alt="" style="height:38px;display:block"><img src="logo-wordmark.png" alt="epifaneia" style="height:34px;display:block"></a>
+  <nav>
+    <a href="#niveles"><span class="es">Tres niveles</span><span class="en">Three levels</span></a>
+    <a href="#pasos"><span class="es">Cinco pasos</span><span class="en">Five steps</span></a>
+    <a href="#repos"><span class="es">Código</span><span class="en">Code</span></a>
+    <a href="#viaje"><span class="es">El viaje</span><span class="en">The journey</span></a>
+    <a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
+    <button class="lang" id="lang" aria-label="Idioma"><span data-l="es">ES</span> · <span data-l="en">EN</span></button>
+  </nav>
+</div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<div class="hero-bg">
+<div class="wrap">
+<div class="hero">
+  <div>
+    <h1><span class="es">Diseño de soluciones de IA</span><span class="en">AI solution design</span></h1>
+    <p class="claim">
+      <span class="es">Comprendemos las ideas fuerza y generamos pilares que sirven para todos. Para tu negocio.</span>
+      <span class="en">We understand the core ideas and turn them into pillars that work for everyone. For your business.</span>
+    </p>
+    <p class="frases">
+      <span class="es"><span>La IA tiene riesgos.</span><span>El código los acota.</span><span>La norma responde de lo que queda.</span></span>
+      <span class="en"><span>AI carries risk.</span><span>Code bounds it.</span><span>The standard answers for what remains.</span></span>
+    </p>
+    <a class="cta" href="#contacto"><span class="es">Reunión de diagnóstico, sin coste</span><span class="en">Assessment meeting, free</span></a>
+    <a class="cta2" href="#repos"><span class="es">Ver el código</span><span class="en">See the code</span></a>
+  </div>
+  <div class="foto" id="foto">
+    <img src="foto.jpg" alt="Daniel Martín">
+  </div>
+</div>
+</div>
+</div>
+
+<div class="wrap">
+
+<!-- ================= TRES NIVELES ================= -->
+<section id="niveles">
+  <h2><span class="k"><span class="es">Tres niveles</span><span class="en">Three levels</span></span>
+    <span class="es">Código, IA y regulación</span><span class="en">Code, AI and regulation</span></h2>
+  <p class="lede">
+    <span class="es">La IA no sustituye a la ingeniería. La necesita. Tres capas, cada una con su prueba.</span>
+    <span class="en">AI does not replace engineering. It needs it. Three layers, each with its proof.</span>
+  </p>
+  <div class="grid3">
+    <div class="card b">
+      <span class="cab"><span class="es">Código</span><span class="en">Code</span></span>
+      <h3><span class="es">La habilidad de fondo: dar forma a las soluciones</span><span class="en">The underlying skill: giving solutions their shape</span></h3>
+      <p><span class="es">Una idea no es una solución hasta que tiene pasos, contratos entre pasos y pruebas. Eso es lo que sabemos hacer.</span><span class="en">An idea is not a solution until it has steps, contracts between steps and tests. That is what we know how to do.</span></p>
+      <ul>
+        <li>Python · <span class="es">pipelines por etapas, salida estructurada, tests</span><span class="en">staged pipelines, structured output, tests</span></li>
+        <li><span class="es">Metodología agile: cada vuelta entrega algo usable</span><span class="en">Agile: every iteration ships something usable</span></li>
+        <li><span class="es">Análisis de datos: pandas, SQL, SQLite, embeddings</span><span class="en">Data analysis: pandas, SQL, SQLite, embeddings</span></li>
+        <li><span class="es">Documentos: PDF, Excel, audio, XML</span><span class="en">Documents: PDF, spreadsheets, audio, XML</span></li>
+        <li><span class="es">Modelos en local y en nube con el mismo contrato</span><span class="en">Local and cloud models under the same contract</span></li>
+        <li>FastAPI · TypeScript · Docker · Git</li>
+      </ul>
+      <p class="l"><a href="https://github.com/epifaneia/ctsm"><span class="es">Prueba de concepto: CTSM →</span><span class="en">Proof of concept: CTSM →</span></a></p>
+    </div>
+    <div class="card s">
+      <span class="cab">IA</span>
+      <h3><span class="es">Los cinco pasos de toda app</span><span class="en">The five steps of every app</span></h3>
+      <p><span class="es">Cualquier aplicación con IA tiene cinco pasos: limpieza, contexto, guardarraíl de entrada, proceso y guardarraíl de salida. Solo uno invoca un modelo. Los otros cuatro son código.</span><span class="en">Every AI application has five steps: cleaning, context, input guardrail, process and output guardrail. Only one invokes a model. The other four are code.</span></p>
+      <p><span class="es">El kit tiene ya, de forma modular y escalable, las herramientas frontera de cada uno de los cinco pasos. Listas para encajar en tu negocio: el 80 % son piezas, el 20 % es el guardarraíl de salida que exige tu destino.</span><span class="en">The kit already holds, modular and scalable, the frontier tools for each of the five steps. Ready to fit your business: 80 % is parts, 20 % is the output guardrail your destination demands.</span></p>
+      <p class="l"><a href="https://github.com/epifaneia/toolkit"><span class="es">El kit →</span><span class="en">The kit →</span></a></p>
+    </div>
+    <div class="card o">
+      <span class="cab"><span class="es">Regulación</span><span class="en">Regulation</span></span>
+      <h3><span class="es">Sectores exigentes, regulación dura</span><span class="en">Demanding sectors, hard regulation</span></h3>
+      <p><span class="es">Hemos colaborado con marcas de los sectores más exigentes, con la regulación más dura. Lo que pide la IA ya lo traíamos de antes.</span><span class="en">We have worked with brands from the most demanding sectors, under the hardest regulation. What AI now requires, we already brought with us.</span></p>
+      <ul>
+        <li>ISO 9001 · ISO/IEC 27001 <span class="pill t"><span class="es">lo traemos</span><span class="en">we bring it</span></span></li>
+        <li><span class="es">Sistemas críticos: IEC 61508 · IEC 62443</span><span class="en">Critical systems: IEC 61508 · IEC 62443</span> <span class="pill t"><span class="es">lo traemos</span><span class="en">we bring it</span></span></li>
+        <li>RGPD · <span class="es">residencia en la UE</span><span class="en">EU data residency</span> <span class="pill t"><span class="es">lo traemos</span><span class="en">we bring it</span></span></li>
+        <li>EU AI Act · ISO/IEC 42001 · 23894 <span class="pill n"><span class="es">nuevo</span><span class="en">new</span></span></li>
+      </ul>
+      <p class="l"><a href="https://github.com/epifaneia/ctsm#custodia"><span class="es">Capítulo de custodia en los README →</span><span class="en">Custody chapter in the READMEs →</span></a></p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:40px"><span class="es">Los tres pilares de la regulación</span><span class="en">The three pillars of regulation</span></h3>
+  <div class="banda b1"><div class="t"><span class="es">Organización · ISO 9001</span><span class="en">Organisation · ISO 9001</span></div><div class="d"><span class="es">Trazabilidad documental y procesos auditables: lo que pide ISO 42001 ya existe en la casa.</span><span class="en">Document traceability and auditable processes: what ISO 42001 asks for already exists in the house.</span></div></div>
+  <div class="banda b2"><div class="t"><span class="es">Cloud y seguridad · 27001 / 27017 / 27018</span><span class="en">Cloud and security · 27001 / 27017 / 27018</span></div><div class="d"><span class="es">Residencia, aislamiento y gobierno del dato: la respuesta técnica a «nos roban los datos».</span><span class="en">Residency, isolation and data governance: the technical answer to "they will steal our data".</span></div></div>
+  <div class="banda b3"><div class="t"><span class="es">Ingeniería · 61508 / 62443</span><span class="en">Engineering · 61508 / 62443</span></div><div class="d"><span class="es">Verificación determinista y análisis de riesgos: la IA se acota como cualquier sistema crítico.</span><span class="en">Deterministic verification and risk analysis: AI is bounded like any other critical system.</span></div></div>
+</section>
+
+<!-- ================= CINCO PASOS ================= -->
+<section id="pasos">
+  <h2><span class="k"><span class="es">Filosofía de diseño</span><span class="en">Design philosophy</span></span>
+    <span class="es">Cualquier app con IA tiene cinco pasos</span><span class="en">Every AI app has five steps</span></h2>
+  <p class="lede">
+    <span class="es">A veces uno está vacío, a veces dos van pegados, pero están. Antes de construir, la pregunta es siempre la misma: ¿en cuál de los cinco hay una mejora enorme esperando? Casi nunca es en el cuarto.</span>
+    <span class="en">Sometimes one is empty, sometimes two are glued together, but they are always there. Before building, the question is always the same: which of the five holds the big improvement? Almost never the fourth.</span>
+  </p>
+  <div class="pasos">
+    <div class="paso"><b>1 · <span class="es">Limpieza</span><span class="en">Cleaning</span></b><span class="es">Lo que llega (PDF, audio, correo, Excel) se convierte en texto íntegro con metadatos: página, minuto, hablante, fecha.</span><span class="en">Whatever arrives (PDF, audio, email, spreadsheets) becomes complete text with metadata: page, minute, speaker, date.</span></div>
+    <div class="paso"><b>2 · <span class="es">Contexto</span><span class="en">Context</span></b><span class="es">El modelo recibe lo justo, identificado, y no se paga dos veces por lo mismo.</span><span class="en">The model gets exactly what it needs, addressable by id, and nothing is paid for twice.</span></div>
+    <div class="paso"><b>3 · <span class="es">Guardarraíl de entrada</span><span class="en">Input guardrail</span></b><span class="es">Lo que el modelo puede decir se acota antes de que hable: esquema, enumeraciones cerradas sacadas de la fuente, presupuesto.</span><span class="en">What the model may say is bounded before it speaks: schema, closed enums taken from the source, budget.</span></div>
+    <div class="paso llm"><b>4 · <span class="es">Proceso</span><span class="en">Process</span></b><span class="es">La llamada. Una, acotada. Cadenas, bucles o agentes solo cuando lo anterior no llega, y diciendo por qué.</span><span class="en">The call. One, bounded. Chains, loops or agents only when that does not suffice, and saying why.</span></div>
+    <div class="paso"><b>5 · <span class="es">Guardarraíl de salida</span><span class="en">Output guardrail</span></b><span class="es">Lo que dijo el modelo se verifica por código contra la fuente. Ante la duda, se degrada y se marca. Nunca se corrige.</span><span class="en">What the model said is verified in code against the source. When in doubt, degrade and flag. Never patch.</span></div>
+  </div>
+  <div class="leyenda">
+    <span><i style="background:var(--verde)"></i><span class="es">determinista · el código garantiza</span><span class="en">deterministic · code guarantees</span></span>
+    <span><i style="background:var(--naranja)"></i><span class="es">el modelo interpreta</span><span class="en">the model interprets</span></span>
+  </div>
+  <p style="margin-top:22px">
+    <span class="es"><strong>Lo que hemos medido:</strong> la comunidad se ha volcado en el paso 4. Con los pasos 1, 2, 3 y 5 bien hechos, el proceso cognitivo que queda en medio cabe en una llamada simple, y el resultado es más potente, más barato y, sobre todo, auditable.</span>
+    <span class="en"><strong>What we have measured:</strong> the community has poured itself into step 4. With steps 1, 2, 3 and 5 done properly, the cognitive work left in the middle fits in one simple call, and the result is stronger, cheaper and, above all, auditable.</span>
+  </p>
+</section>
+
+<!-- ================= REPOS ================= -->
+<section id="repos">
+  <h2><span class="k"><span class="es">Los pilares, en el código</span><span class="en">The pillars, in code</span></span>
+    <span class="es">Tres repositorios públicos desde el minuto uno</span><span class="en">Three public repositories from minute one</span></h2>
+  <p class="lede">
+    <span class="es">Datos públicos, cifras medidas, y en cada README una sección de limitaciones.</span>
+    <span class="en">Public data, measured numbers, and in every README a section of limitations.</span>
+  </p>
+  <div class="repos">
+    <div class="repo">
+      <div class="k"><span class="es">Código · prueba de concepto</span><span class="en">Code · proof of concept</span></div>
+      <h3>CTSM</h3>
+      <p><span class="es">Audita requisitos de cliente contra la documentación del proveedor y devuelve el mismo fichero con el veredicto y la cita anclada a su página. El modelo nunca escribe ubicaciones. Funciona sin red.</span><span class="en">Audits customer requirements against supplier documentation and returns the same file with the verdict and the citation anchored to its page. The model never writes locations. Works offline.</span></p>
+      <p class="l"><a href="https://github.com/epifaneia/ctsm">github.com/epifaneia/ctsm →</a></p>
+    </div>
+    <div class="repo">
+      <div class="k"><span class="es">Código · prueba de concepto</span><span class="en">Code · proof of concept</span></div>
+      <h3><span class="es">Extractor ReqIF</span><span class="en">ReqIF extractor</span></h3>
+      <p><span class="es">De un PDF de especificación a un fichero de requisitos importable, con jerarquía, identificadores verbatim y auditoría de posición. Veinte veces más barato que mirar el PDF entero.</span><span class="en">From a specification PDF to an importable requirements file, with hierarchy, verbatim identifiers and positional audit. Twenty times cheaper than looking at the whole PDF.</span></p>
+      <p class="l"><a href="https://github.com/epifaneia/reqif-extractor">github.com/epifaneia/reqif-extractor →</a></p>
+    </div>
+    <div class="repo">
+      <div class="k">IA · <span class="es">el kit</span><span class="en">the kit</span></div>
+      <h3><span class="es">El kit</span><span class="en">The kit</span></h3>
+      <p><span class="es">Las piezas frontera de los cinco pasos, extraídas de los pipelines anteriores, modulares y escalables. Se monta un pipeline nuevo poniendo piezas y dedicando el tiempo al guardarraíl de salida.</span><span class="en">The frontier parts of the five steps, extracted from the pipelines above, modular and scalable. A new pipeline is assembled from parts, with the time spent on the output guardrail.</span></p>
+      <p class="l"><a href="https://github.com/epifaneia/toolkit">github.com/epifaneia/toolkit →</a></p>
+    </div>
+  </div>
+  <p class="cierre"><span class="es">Medimos primero. Decidimos sobre evidencia.</span><span class="en">We measure first. We decide on evidence.</span></p>
+</section>
+
+<!-- ================= EL VIAJE ================= -->
+<section id="viaje">
+  <h2><span class="k"><span class="es">El viaje</span><span class="en">The journey</span></span>
+    <span class="es">Epifaneia</span><span class="en">Epifaneia</span></h2>
+  <p class="lede">
+    <span class="es">En los <em>Elementos</em> de Euclides, ἐπιφάνεια es la palabra para "superficie": lo que solo tiene longitud y anchura. La misma palabra significa manifestación, lo que se hace visible. Las dos cosas a la vez: lo abierto y lo medible.</span>
+    <span class="en">In Euclid's <em>Elements</em>, ἐπιφάνεια is the word for "surface": that which has length and breadth only. The same word means manifestation, what becomes visible. Both at once: the open and the measurable.</span>
+  </p>
+  <p>
+    <span class="es">Trabajamos así en todo: de una idea se extrae su idea fuerza, la frase que sobrevive cuando se quita el ruido. De la idea fuerza salen pilares, y los pilares sirven para más de un negocio. Lo que aquí es un pipeline de documentos, en otro sitio es un juego, un manual, una manera de conversar con una máquina por voz. Otros proyectos viven fuera de este núcleo, y son la misma búsqueda con otra forma.</span>
+    <span class="en">We work this way in everything: from an idea we extract its core, the sentence that survives once the noise is gone. From the core come pillars, and pillars serve more than one business. What here is a document pipeline is, elsewhere, a game, a manual, a way of talking to a machine by voice. Other projects live outside this core, and they are the same search in another shape.</span>
+  </p>
+  <p>
+    <span class="es">Cada vuelta entrega algo usable. Cada día mejora. Hoy ya se puede usar.</span>
+    <span class="en">Every iteration ships something usable. Every day it gets better. Today it can already be used.</span>
+  </p>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section id="contacto">
+  <h2><span class="k"><span class="es">Contacto</span><span class="en">Contact</span></span>
+    <span class="es">Reunión de diagnóstico, 60 minutos, sin coste</span><span class="en">Assessment meeting, 60 minutes, free</span></h2>
+  <p class="lede">
+    <span class="es">Revisamos dónde van tus datos hoy cuando alguien de tu equipo usa IA, y qué paso de los cinco tiene la mejora esperando. Te quedas con la ficha de custodia medio rellena.</span>
+    <span class="en">We go through where your data goes today when someone on your team uses AI, and which of the five steps holds the improvement. You keep the half-filled custody sheet.</span>
+  </p>
+  <p><a class="cta" href="mailto:danielmartin@epifaneia.dev">danielmartin@epifaneia.dev</a> <a class="cta2" href="https://www.linkedin.com/in/epifaneia">LinkedIn</a> <a class="cta2" href="https://www.youtube.com/@epifaneia">YouTube</a> <a class="cta2" href="https://github.com/epifaneia">GitHub</a></p>
+</section>
+
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+  <div><span class="es">Epifaneia · Daniel Martín · Sin cookies, sin analítica, sin nada que salga de tu navegador.</span><span class="en">Epifaneia · Daniel Martín · No cookies, no analytics, nothing leaves your browser.</span></div>
+  <div class="sutil">
+    <!-- ENLACE SUTIL: app con IA. URL pendiente. -->
+    <span class="es">Fuera del núcleo, una mente que diseña. <a href="#">Un juego que se juega con IA</a>.</span>
+    <span class="en">Outside the core, a mind that designs. <a href="#">A game played with AI</a>.</span>
+  </div>
+</div>
+</footer>
+
+<script>
+(function(){
+  var b=document.body, btn=document.getElementById('lang');
+  function set(l){b.className=l;document.documentElement.lang=l;btn.querySelectorAll('span').forEach(function(s){s.classList.toggle('on',s.dataset.l===l);});try{localStorage.setItem('lang',l);}catch(e){}}
+  var saved=null;try{saved=localStorage.getItem('lang');}catch(e){}
+  set(saved||(navigator.language&&navigator.language.slice(0,2)==='es'?'es':'en'));
+  btn.addEventListener('click',function(){set(b.className==='es'?'en':'es');});
+})();
+</script>
+</body>
+</html>
