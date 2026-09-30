@@ -82,11 +82,20 @@ li{margin-bottom:6px}
 .paso span{display:block;font-size:.88rem;line-height:1.45}
 .leyenda{display:flex;gap:18px;flex-wrap:wrap;font-size:.82rem;color:var(--suave)}
 .leyenda i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
-/* bandas de regulación (como el pdf) */
-.banda{display:grid;grid-template-columns:300px 1fr;border:1px solid var(--linea);border-radius:4px;overflow:hidden;margin-bottom:10px}
-.banda .t{padding:12px 16px;color:#fff;font:500 .74rem var(--mono);letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center}
-.banda .d{padding:12px 16px;font-size:.95rem;background:var(--bg)}
-.banda.b1 .t{background:var(--petroleo)} .banda.b2 .t{background:var(--verde)} .banda.b3 .t{background:var(--ambar)}
+/* pilares de regulación */
+.pilares{display:grid;gap:14px}
+.pilar{display:grid;grid-template-columns:64px 1fr;border:1px solid var(--linea);border-radius:4px;overflow:hidden;background:var(--bg)}
+.pilar .n{display:flex;justify-content:center;padding-top:18px;color:#fff;font:600 1.5rem var(--mono)}
+.pilar.p1 .n{background:var(--petroleo)} .pilar.p2 .n{background:var(--verde)} .pilar.p3 .n{background:var(--ambar)}
+.pilar .c{padding:16px 22px 14px}
+.pilar h3{margin:0 0 8px}
+.pilar p{margin:0 0 10px;font-size:.98rem;max-width:800px}
+.pilar .iso{font:500 .68rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--suave)}
+/* el viaje */
+#viaje p{max-width:760px}
+#viaje .lede{margin-bottom:16px}
+#viaje h3{margin-top:36px}
+#viaje .lema{font-weight:600;color:var(--petroleo);margin:0 0 12px}
 /* repos */
 .repos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .repo{border:1px solid var(--linea);border-radius:6px;padding:20px 22px;background:var(--oat)}
@@ -116,7 +125,8 @@ footer .sutil a{color:#8a8f96}
   h2{font-size:1.45rem}
   .grid3,.repos,.pasos{grid-template-columns:1fr}
   .paso{min-height:0}
-  .banda{grid-template-columns:1fr}
+  .pilar{grid-template-columns:44px 1fr}
+  .pilar .n{font-size:1.1rem;padding-top:15px}
 }
 </style>
 </head>
@@ -128,6 +138,7 @@ footer .sutil a{color:#8a8f96}
   <nav>
     <a href="#niveles"><span class="es">Tres niveles</span><span class="en">Three levels</span></a>
     <a href="#pasos"><span class="es">Cinco pasos</span><span class="en">Five steps</span></a>
+    <a href="#regulacion"><span class="es">Regulación</span><span class="en">Regulation</span></a>
     <a href="#repos"><span class="es">Código</span><span class="en">Code</span></a>
     <a href="#viaje"><span class="es">El viaje</span><span class="en">The journey</span></a>
     <a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
@@ -204,14 +215,9 @@ footer .sutil a{color:#8a8f96}
         <li>RGPD · <span class="es">residencia en la UE</span><span class="en">EU data residency</span> <span class="pill t"><span class="es">lo traemos</span><span class="en">we bring it</span></span></li>
         <li>EU AI Act · ISO/IEC 42001 · 23894 <span class="pill n"><span class="es">nuevo</span><span class="en">new</span></span></li>
       </ul>
-      <p class="l"><a href="https://github.com/epifaneia/ctsm#custodia"><span class="es">Capítulo de custodia en los README →</span><span class="en">Custody chapter in the READMEs →</span></a></p>
+      <p class="l"><a href="#regulacion"><span class="es">Los tres pilares →</span><span class="en">The three pillars →</span></a></p>
     </div>
   </div>
-
-  <h3 style="margin-top:40px"><span class="es">Los tres pilares de la regulación</span><span class="en">The three pillars of regulation</span></h3>
-  <div class="banda b1"><div class="t"><span class="es">Organización · ISO 9001</span><span class="en">Organisation · ISO 9001</span></div><div class="d"><span class="es">Trazabilidad documental y procesos auditables: lo que pide ISO 42001 ya existe en la casa.</span><span class="en">Document traceability and auditable processes: what ISO 42001 asks for already exists in the house.</span></div></div>
-  <div class="banda b2"><div class="t"><span class="es">Cloud y seguridad · 27001 / 27017 / 27018</span><span class="en">Cloud and security · 27001 / 27017 / 27018</span></div><div class="d"><span class="es">Residencia, aislamiento y gobierno del dato: la respuesta técnica a «nos roban los datos».</span><span class="en">Residency, isolation and data governance: the technical answer to "they will steal our data".</span></div></div>
-  <div class="banda b3"><div class="t"><span class="es">Ingeniería · 61508 / 62443</span><span class="en">Engineering · 61508 / 62443</span></div><div class="d"><span class="es">Verificación determinista y análisis de riesgos: la IA se acota como cualquier sistema crítico.</span><span class="en">Deterministic verification and risk analysis: AI is bounded like any other critical system.</span></div></div>
 </section>
 
 <!-- ================= CINCO PASOS ================= -->
@@ -236,6 +242,37 @@ footer .sutil a{color:#8a8f96}
   <p style="margin-top:22px">
     <span class="es"><strong>Lo que hemos medido:</strong> la comunidad se ha volcado en el paso 4. Con los pasos 1, 2, 3 y 5 bien hechos, el proceso cognitivo que queda en medio cabe en una llamada simple, y el resultado es más potente, más barato y, sobre todo, auditable.</span>
     <span class="en"><strong>What we have measured:</strong> the community has poured itself into step 4. With steps 1, 2, 3 and 5 done properly, the cognitive work left in the middle fits in one simple call, and the result is stronger, cheaper and, above all, auditable.</span>
+  </p>
+</section>
+
+<!-- ================= REGULACIÓN ================= -->
+<section id="regulacion">
+  <h2><span class="k"><span class="es">Regulación</span><span class="en">Regulation</span></span>
+    <span class="es">Los tres pilares</span><span class="en">The three pillars</span></h2>
+  <p class="lede">
+    <span class="es">Lo que la norma pide de un sistema con IA es lo que siempre pidió de un sistema crítico: saber quién hizo qué, que el dato no se escape y que el error tenga límite. Tres pilares. Cada uno con su código.</span>
+    <span class="en">What regulation asks of a system with AI is what it always asked of a critical system: know who did what, keep the data from escaping and put a limit on error. Three pillars. Each with its code.</span>
+  </p>
+  <div class="pilares">
+    <div class="pilar p1"><div class="n">1</div><div class="c">
+      <h3><span class="es">Trazabilidad: quién hizo qué</span><span class="en">Traceability: who did what</span></h3>
+      <p><span class="es">Registro obligatorio de cada paso y de cada llamada al modelo, con firma de usuario. Sabemos en todo momento quién hizo qué, con qué dato y qué respondió. Nada va a producción sin autorización de alguien que sabe: la firma humana no es un trámite, es un paso más del proceso (lo que la norma llama <em>human in the loop</em>).</span><span class="en">Mandatory logging of every step and every model call, signed by the user. We know at all times who did what, with which data and what the model answered. Nothing goes to production without sign-off from someone who knows: the human signature is not a formality, it is one more step of the process (what the standard calls <em>human in the loop</em>).</span></p>
+      <div class="iso">ISO 9001 · ISO/IEC 42001</div>
+    </div></div>
+    <div class="pilar p2"><div class="n">2</div><div class="c">
+      <h3><span class="es">Custodia del dato: dónde vive y quién lo ve</span><span class="en">Data custody: where it lives and who sees it</span></h3>
+      <p><span class="es">Residencia, aislamiento y gobierno del dato. El dato se queda donde debe, en local o en la UE. Cada proceso ve solo lo suyo. Y contra la fuga interna, que es la más frecuente: permisos por nivel de acceso, para que no haya fugas entre compañeros que no ven lo mismo; procesos aislados; verificación en dos pasos.</span><span class="en">Residency, isolation and governance of the data. The data stays where it belongs, on premises or in the EU. Each process sees only its own. And against the internal leak, the most frequent one: permissions by access level, so nothing leaks between colleagues who are not meant to see the same; isolated processes; two-step verification.</span></p>
+      <div class="iso">ISO/IEC 27001 · 27017 · 27018 · <span class="es">RGPD</span><span class="en">GDPR</span></div>
+    </div></div>
+    <div class="pilar p3"><div class="n">3</div><div class="c">
+      <h3><span class="es">Verificación y riesgo: el error tiene límite</span><span class="en">Verification and risk: error has a limit</span></h3>
+      <p><span class="es">Verificación determinista y análisis de riesgos. Guardamos estadísticas de desvío: si el modelo empieza a responder distinto de como respondía, se ve en los números antes que en el cliente. El proceso se revisa periódicamente y, de nuevo, todo lo que va a producción lleva firma humana. Riesgos auditados, límites aceptables estudiados y medidas explícitas para cuando algo falla.</span><span class="en">Deterministic verification and risk analysis. We keep drift statistics: if the model starts answering differently from how it used to, it shows in the numbers before it shows in the customer. The process is reviewed periodically and, once again, everything that goes to production carries a human signature. Audited risks, acceptable limits studied, and explicit measures for when something fails.</span></p>
+      <div class="iso">IEC 61508 · IEC 62443 · ISO/IEC 23894</div>
+    </div></div>
+  </div>
+  <p class="l" style="margin-top:22px;font-weight:600;font-size:.95rem">
+    <span class="es"><a href="https://github.com/epifaneia/ctsm/blob/main/README.es.md#seguridad-y-regulaci%C3%B3n">El capítulo de custodia de cada README cuenta cómo se aplica en cada herramienta →</a></span>
+    <span class="en"><a href="https://github.com/epifaneia/ctsm#security--regulation">The custody chapter of every README tells how it is applied in each tool →</a></span>
   </p>
 </section>
 
@@ -287,19 +324,32 @@ footer .sutil a{color:#8a8f96}
   <h2><span class="k"><span class="es">El viaje</span><span class="en">The journey</span></span>
     <span class="es">Epifaneia</span><span class="en">Epifaneia</span></h2>
   <p class="lede">
-    <span class="es">En los <em>Elementos</em> de Euclides, ἐπιφάνεια es la palabra para "superficie": lo que solo tiene longitud y anchura. La misma palabra significa manifestación, lo que se hace visible. Las dos cosas a la vez: lo abierto y lo medible.</span>
-    <span class="en">In Euclid's <em>Elements</em>, ἐπιφάνεια is the word for "surface": that which has length and breadth only. The same word means manifestation, what becomes visible. Both at once: the open and the measurable.</span>
+    <span class="es"><strong>Epifaneia.</strong> Del griego ἐπιφάνεια: la manifestación de los dioses. El susurro divino. Las palabras que ya no puedes olvidar. La idea feliz que rompe un paradigma.</span>
+    <span class="en"><strong>Epifaneia.</strong> From the Greek ἐπιφάνεια: the manifestation of the gods. The divine whisper. The words you can no longer forget. The happy idea that breaks a paradigm.</span>
+  </p>
+  <p>
+    <span class="es">He perseguido siempre esa sensación. La física me enamoró cuando entendí que el mundo de lo absurdamente pequeño y el mundo de lo incomprensiblemente grande rompen todos nuestros conceptos previos. La filosofía hizo lo propio con el alma humana y con la política, y me dio unas lecciones de humildad epistemológica que rompieron por completo la belleza matemática del laboratorio. Ahora, la IA. Todo lo que creía posible se rompe cada año. Qué digo. Cada mes.</span>
+    <span class="en">I have always chased that feeling. Physics made me fall in love when I understood that the world of the absurdly small and the world of the incomprehensibly large break every concept we came with. Philosophy did the same with the human soul and with politics, and taught me lessons in epistemic humility that shattered the mathematical beauty of the laboratory. Now, AI. Everything I believed possible breaks every year. What am I saying. Every month.</span>
+  </p>
+  <p>
+    <span class="es">De cada viaje extraje lecciones que caben en una hoja de papel y que cambiaron mi visión del mundo para siempre. Aquí comparto las que cambiaron mi forma de trabajar. Si el proyecto rueda, comparto el resto.</span>
+    <span class="en">From each journey I took lessons that fit on a sheet of paper and changed how I see the world for good. Here I share the ones that changed how I work. If the project rolls, I will share the rest.</span>
   </p>
   <h3><span class="es">Quién</span><span class="en">Who</span></h3>
+  <p class="lema"><span class="es">Aprendiz de todo, maestro de nada.</span><span class="en">Jack of all trades, master of none.</span></p>
   <p>
-    <span class="es">Soy programador. La IA la estudié por mi cuenta y a fondo: los modelos, lo que pueden y lo que no, y la regulación que les está llegando. De ahí salió una forma de trabajar, los cinco pasos, que me permite construir herramientas nuevas sobre la misma base cada vez: el modelo interpreta, el código garantiza. He trabajado con empresas de automoción, alimentación y otros sectores donde la normativa manda y un error silencioso cuesta caro.</span>
-    <span class="en">I am a programmer. I studied AI on my own and in depth: the models, what they can and cannot do, and the regulation that is arriving for them. Out of that came a way of working, the five steps, that lets me build new tools on the same base every time: the model interprets, the code guarantees. I have worked with companies in automotive, food and other sectors where regulation rules and a silent error is expensive.</span>
+    <span class="es">Mi viaje no se entiende sin ninguno de sus pasos. La física me dio la base. La filosofía me enseñó a no confiar en ella. El código, a convertir la lógica en máquinas vivas. Y estudiar la IA no fue estudiarla en el vacío: fue hacer que todas las piezas encajaran. De ese viaje nacen los cinco pasos de diseño y los pilares de seguridad.</span>
+    <span class="en">My journey makes no sense without any one of its steps. Physics gave me the base. Philosophy taught me not to trust it. Code, to turn logic into living machines. And studying AI was not studying it in a vacuum: it was making all the pieces fit. From that journey come the five design steps and the security pillars.</span>
+  </p>
+  <p>
+    <span class="es">Parecen una idea feliz, pero fueron el fruto de un estudio apasionado sobre una base amplia. Además, tuve la suerte de poner mis ideas en práctica en los entornos más sujetos a normativa: la automoción.</span>
+    <span class="en">They look like a happy idea, but they were the fruit of passionate study on a broad base. And I was lucky enough to put my ideas into practice in the environments most bound by regulation: automotive.</span>
+  </p>
+  <p>
+    <span class="es">Y funcionaba. La idea terminó. Comienza el trabajo. He semiautomatizado la creación de herramientas de automatización.</span>
+    <span class="en">And it worked. The idea is finished. The work begins. I have semi-automated the making of automation tools.</span>
   </p>
   <p class="l" style="font-weight:600;font-size:.95rem"><a href="https://github.com/epifaneia/cv"><span class="es">CV en PDF, español e inglés →</span><span class="en">CV as PDF, Spanish and English →</span></a></p>
-  <p>
-    <span class="es">Trabajamos así en todo: de una idea se extrae su idea fuerza, la frase que sobrevive cuando se quita el ruido. De la idea fuerza salen pilares, y los pilares sirven para más de un negocio. Lo que aquí es un pipeline de documentos, en otro sitio es un juego, un manual, una manera de conversar con una máquina por voz. Otros proyectos viven fuera de este núcleo, y son la misma búsqueda con otra forma.</span>
-    <span class="en">We work this way in everything: from an idea we extract its core, the sentence that survives once the noise is gone. From the core come pillars, and pillars serve more than one business. What here is a document pipeline is, elsewhere, a game, a manual, a way of talking to a machine by voice. Other projects live outside this core, and they are the same search in another shape.</span>
-  </p>
   <p>
     <span class="es">Cada vuelta entrega algo usable. Cada día mejora. Hoy ya se puede usar.</span>
     <span class="en">Every iteration ships something usable. Every day it gets better. Today it can already be used.</span>
