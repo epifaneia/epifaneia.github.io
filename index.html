@@ -99,12 +99,24 @@ footer{padding:44px 0 64px;border-top:1px solid var(--linea);color:var(--suave);
 footer .sutil{margin-top:22px;font-size:.82rem;color:#8a8f96}
 footer .sutil a{color:#8a8f96}
 @media (max-width:800px){
-  .hero{grid-template-columns:1fr;padding:56px 0 40px}
-  .hero h1{font-size:2.2rem}
-  .foto{max-width:240px}
+  html,body{overflow-x:hidden}
+  header{position:static}
+  header .wrap{height:auto;flex-wrap:wrap;gap:8px 0;padding:10px 20px 12px}
+  nav{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;width:100%}
+  nav a{margin:0;font-size:.82rem}
+  .lang{margin-left:auto}
+  .wrap{padding:0 20px}
+  .hero{grid-template-columns:1fr;padding:36px 0 32px;gap:28px}
+  .hero h1{font-size:2.1rem}
+  .hero .claim{font-size:1.12rem}
+  .hero .frases{font-size:.84rem}
+  .foto{max-width:220px}
+  .cta,.cta2{display:block;margin:0 0 10px;text-align:center}
+  section{padding:48px 0}
+  h2{font-size:1.45rem}
   .grid3,.repos,.pasos{grid-template-columns:1fr}
+  .paso{min-height:0}
   .banda{grid-template-columns:1fr}
-  nav a{margin-left:12px;font-size:.82rem}
 }
 </style>
 </head>
