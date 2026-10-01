@@ -91,10 +91,20 @@ li{margin-bottom:6px}
 .pilar h3{margin:0 0 8px}
 .pilar p{margin:0 0 10px;font-size:.98rem;max-width:800px}
 .pilar .iso{font:500 .68rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--suave);margin-top:6px}
-.pilar ul{margin:4px 0 10px;padding-left:18px;font-size:.93rem;max-width:800px}
-.pilar li{margin-bottom:4px}
-.pilar h4{margin:12px 0 4px;font:600 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--suave)}
 .pilar .nota{color:var(--suave);font-size:.88rem}
+/* pasos sobre un raíl; el tono baja por paso dentro del color del pilar */
+.pilar.p1{--c1:#0F5C63;--c2:#2F7379;--c3:#4F8A8F;--c4:#6FA1A5;--c5:#8FB8BB;--rail:var(--petroleo-bg)}
+.pilar.p2{--c1:#0B6E4F;--c2:#2A8364;--c3:#4A977A;--c4:#6CAB91;--c5:#8EBFA8;--rail:var(--verde-bg)}
+.pilar.p3{--c1:#8F5A00;--c2:#A2722A;--c3:#B48A4F;--c4:#C5A274;--c5:#D5BA99;--rail:var(--ambar-bg)}
+.steps{margin:14px 0 4px 10px;padding-left:30px;border-left:2px solid var(--rail);max-width:800px}
+.st{position:relative;margin:0 0 16px}
+.st::before{content:attr(data-n);position:absolute;left:-44px;top:0;width:26px;height:26px;border-radius:50%;background:var(--sc);color:#fff;font:600 .66rem var(--mono);display:flex;align-items:center;justify-content:center}
+.st.s1{--sc:var(--c1)} .st.s2{--sc:var(--c2)} .st.s3{--sc:var(--c3)} .st.s4{--sc:var(--c4)} .st.s5{--sc:var(--c5)}
+.st h4{margin:0 0 4px;font-size:1rem;font-weight:600;color:var(--tinta);line-height:26px}
+.st h4 small{display:block;line-height:1.3;font-weight:400;color:var(--suave);font-size:.86rem;margin-top:2px}
+.st p{margin:0;font-size:.93rem}
+.st ul{margin:4px 0 0;padding-left:18px;font-size:.93rem}
+.st li{margin-bottom:4px}
 /* el viaje */
 #viaje p{max-width:760px}
 #viaje .lede{margin-bottom:16px}
@@ -131,6 +141,7 @@ footer .sutil a{color:#8a8f96}
   .paso{min-height:0}
   .pilar{grid-template-columns:44px 1fr}
   .pilar .c{padding:14px 14px 12px}
+  .steps{margin-left:4px;padding-left:22px} .st::before{left:-36px;width:22px;height:22px;font-size:.6rem} .st h4{line-height:22px}
   .pilar .n{font-size:1.1rem;padding-top:15px}
 }
 </style>
@@ -262,53 +273,77 @@ footer .sutil a{color:#8a8f96}
     <div class="pilar p1"><div class="n">1</div><div class="c">
       <h3><span class="es">Trazabilidad: quién hizo qué</span><span class="en">Traceability: who did what</span></h3>
       <p><span class="es">Registro de cada paso y de cada llamada al modelo, con quién lo ejecutó, qué dato entró y qué salió. Y nadie pasa a producción sin firma humana.</span><span class="en">A record of every step and every model call, with who ran it, what data went in and what came out. And nobody reaches production without a human signature.</span></p>
-      <ul>
-        <li><span class="es"><strong>Registro obligatorio</strong>: usuario, fecha, entrada, salida, versión del modelo y del prompt. Inmutable y exportable para auditoría.</span><span class="en"><strong>Mandatory logging</strong>: user, date, input, output, model and prompt version. Immutable and exportable for audit.</span></li>
-        <li><span class="es"><strong>Firma humana</strong> (<em>human in the loop</em>) antes de que cualquier salida llegue a un cliente, a un fichero maestro o a producción. Quién firma, queda registrado.</span><span class="en"><strong>Human signature</strong> (<em>human in the loop</em>) before any output reaches a customer, a master file or production. Who signs is recorded.</span></li>
-        <li><span class="es"><strong>Control de accesos propio, por encima del nativo</strong>: quién puede ejecutar qué proceso y sobre qué datos, con revisión periódica.</span><span class="en"><strong>Our own access control, on top of the native one</strong>: who may run which process on which data, reviewed periodically.</span></li>
-        <li><span class="es"><strong>Versionado</strong>: qué modelo, qué prompt y qué guardarraíl respondieron cada día. Sin eso no hay auditoría posible.</span><span class="en"><strong>Versioning</strong>: which model, which prompt and which guardrail answered on each day. Without it there is no audit possible.</span></li>
-      </ul>
+      <div class="steps">
+      <div class="st s1" data-n="1.1"><h4><span class="es">Registro obligatorio</span><span class="en">Mandatory logging</span></h4>
+        <p><span class="es">Usuario, fecha, entrada, salida, versión del modelo y del prompt. Inmutable y exportable para auditoría.</span><span class="en">User, date, input, output, model and prompt version. Immutable and exportable for audit.</span></p>
+      </div>
+      <div class="st s2" data-n="1.2"><h4><span class="es">Firma humana</span><span class="en">Human signature</span></h4>
+        <p><span class="es"><em>Human in the loop</em>: antes de que cualquier salida llegue a un cliente, a un fichero maestro o a producción. Quién firma, queda registrado.</span><span class="en"><em>Human in the loop</em>: before any output reaches a customer, a master file or production. Who signs is recorded.</span></p>
+      </div>
+      <div class="st s3" data-n="1.3"><h4><span class="es">Control de accesos propio, por encima del nativo</span><span class="en">Our own access control, on top of the native one</span></h4>
+        <p><span class="es">Quién puede ejecutar qué proceso y sobre qué datos, con revisión periódica.</span><span class="en">Who may run which process on which data, reviewed periodically.</span></p>
+      </div>
+      <div class="st s4" data-n="1.4"><h4><span class="es">Versionado</span><span class="en">Versioning</span></h4>
+        <p><span class="es">Qué modelo, qué prompt y qué guardarraíl respondieron cada día. Sin eso no hay auditoría posible.</span><span class="en">Which model, which prompt and which guardrail answered on each day. Without it there is no audit possible.</span></p>
+      </div>
+      </div>
       <div class="iso">ISO 9001 · ISO/IEC 42001</div>
     </div></div>
     <div class="pilar p2"><div class="n">2</div><div class="c">
       <h3><span class="es">Custodia del dato: dónde vive y quién lo ve</span><span class="en">Data custody: where it lives and who sees it</span></h3>
-      <p><span class="es">Toda fuga es grave: entre compañeros, hacia el proveedor, por la nube. La lista es larga y hay que recorrerla entera. Cuatro bloques.</span><span class="en">Every leak is serious: between colleagues, towards the provider, through the cloud. The list is long and has to be walked to the end. Four blocks.</span></p>
-      <h4><span class="es">Negociar con el proveedor</span><span class="en">Negotiate with the provider</span></h4>
-      <ul>
-        <li><span class="es">Cifrado en tránsito y en reposo. <span class="nota">Nota honesta: con un modelo en nube, el proveedor procesa el texto en claro; el cifrado de punta a punta solo existe en local. Lo que se negocia es lo demás.</span></span><span class="en">Encryption in transit and at rest. <span class="nota">Honest note: with a cloud model, the provider processes the text in the clear; end-to-end encryption only exists on premises. What gets negotiated is everything else.</span></span></li>
-        <li><span class="es">Política de retención cero (<em>zero data retention</em>), por contrato.</span><span class="en">Zero data retention policy, in the contract.</span></li>
-        <li><span class="es">Región de la nube fijada por normativa: Europa occidental.</span><span class="en">Cloud region fixed by regulation: Western Europe.</span></li>
-        <li><span class="es">Seguimiento de los términos y condiciones: algunos modelos están fuera de cualquier acuerdo de retención cero. Ese detalle se tiene presente siempre, no una vez.</span><span class="en">Tracking of terms and conditions: some models sit outside any possible zero-retention agreement. That detail is kept in mind always, not once.</span></li>
-        <li><span class="es">Estabilidad de versiones y preaviso ante cambios o retiradas de modelo.</span><span class="en">Version stability and advance notice of model changes or retirements.</span></li>
-      </ul>
-      <h4><span class="es">Configurar las herramientas</span><span class="en">Configure the tools</span></h4>
-      <ul>
-        <li><span class="es">Permisos por nivel de acceso: con las herramientas nativas cuando las hay (Copilot hereda los permisos de Microsoft 365) y con los nuestros cuando no.</span><span class="en">Permissions by access level: with native tools where they exist (Copilot inherits Microsoft 365 permissions) and with our own where they do not.</span></li>
-        <li><span class="es">Anonimización de datos personales antes de que lleguen al modelo (p. ej. Presidio, de Microsoft, código abierto).</span><span class="en">Anonymisation of personal data before it reaches the model (e.g. Presidio, Microsoft's open-source library).</span></li>
-        <li><span class="es">Procesos aislados: cada uno ve solo lo suyo. Verificación en dos pasos.</span><span class="en">Isolated processes: each one sees only its own. Two-step verification.</span></li>
-      </ul>
-      <h4><span class="es">Configurar los procesos</span><span class="en">Configure the processes</span></h4>
-      <ul>
-        <li><span class="es">Firma humana y control de accesos más allá del nativo.</span><span class="en">Human signature and access control beyond the native one.</span></li>
-        <li><span class="es">En local obligatorio para proyectos críticos: sector público y usos de alto riesgo según el EU AI Act.</span><span class="en">On premises mandatory for critical projects: public sector and high-risk uses under the EU AI Act.</span></li>
-      </ul>
-      <h4><span class="es">Formar y usar bien</span><span class="en">Train and use properly</span></h4>
-      <ul>
-        <li><span class="es">Conciencia de los riesgos específicos, como la inyección de prompt (texto escondido en un documento que da órdenes al modelo), mitigada con filtros de modelos intermedios.</span><span class="en">Awareness of the specific risks, such as prompt injection (text hidden in a document that gives the model orders), mitigated with intermediate model filters.</span></li>
-        <li><span class="es">Límites de uso para los empleados: qué no se pega nunca en un prompt.</span><span class="en">Usage limits for employees: what never gets pasted into a prompt.</span></li>
-      </ul>
+      <p><span class="es">Toda fuga es grave: entre compañeros, hacia el proveedor, por la nube. La lista es larga y hay que recorrerla entera. Cuatro pasos, en este orden.</span><span class="en">Every leak is serious: between colleagues, towards the provider, through the cloud. The list is long and has to be walked to the end. Four steps, in this order.</span></p>
+      <div class="steps">
+      <div class="st s1" data-n="2.1"><h4><span class="es">Negociar con el proveedor</span><span class="en">Negotiate with the provider</span><small><span class="es">Lo que se firma antes de mandar el primer dato.</span><span class="en">What gets signed before the first byte leaves.</span></small></h4>
+        <ul>
+          <li><span class="es">Cifrado en tránsito y en reposo. <span class="nota">Con un modelo en nube el proveedor procesa el texto en claro; el cifrado de punta a punta solo existe en local. Lo que se negocia es lo demás.</span></span><span class="en">Encryption in transit and at rest. <span class="nota">With a cloud model the provider processes the text in the clear; end-to-end encryption only exists on premises. What gets negotiated is everything else.</span></span></li>
+          <li><span class="es">Política de retención cero (<em>zero data retention</em>), por contrato.</span><span class="en">Zero data retention policy, in the contract.</span></li>
+          <li><span class="es">Región de la nube fijada por normativa: Europa occidental.</span><span class="en">Cloud region fixed by regulation: Western Europe.</span></li>
+          <li><span class="es">Seguimiento de los términos y condiciones: algunos modelos están fuera de cualquier acuerdo de retención cero. Se tiene presente siempre, no una vez.</span><span class="en">Tracking of terms and conditions: some models sit outside any possible zero-retention agreement. Kept in mind always, not once.</span></li>
+          <li><span class="es">Estabilidad de versiones y preaviso ante cambios o retiradas de modelo.</span><span class="en">Version stability and advance notice of model changes or retirements.</span></li>
+        </ul>
+      </div>
+      <div class="st s2" data-n="2.2"><h4><span class="es">Configurar las herramientas</span><span class="en">Configure the tools</span><small><span class="es">Lo que la máquina impide por sí sola.</span><span class="en">What the machine prevents on its own.</span></small></h4>
+        <ul>
+          <li><span class="es">Permisos por nivel de acceso: nativos cuando los hay (Copilot hereda los de Microsoft 365), nuestros cuando no.</span><span class="en">Permissions by access level: native where they exist (Copilot inherits Microsoft 365 permissions), our own where they do not.</span></li>
+          <li><span class="es">Anonimización de datos personales antes de que lleguen al modelo (p. ej. Presidio, de Microsoft, código abierto).</span><span class="en">Anonymisation of personal data before it reaches the model (e.g. Presidio, Microsoft's open-source library).</span></li>
+          <li><span class="es">Procesos aislados: cada uno ve solo lo suyo. Verificación en dos pasos.</span><span class="en">Isolated processes: each one sees only its own. Two-step verification.</span></li>
+        </ul>
+      </div>
+      <div class="st s3" data-n="2.3"><h4><span class="es">Configurar los procesos</span><span class="en">Configure the processes</span><small><span class="es">Lo que la empresa decide por escrito.</span><span class="en">What the company decides in writing.</span></small></h4>
+        <ul>
+          <li><span class="es">Firma humana y control de accesos más allá del nativo.</span><span class="en">Human signature and access control beyond the native one.</span></li>
+          <li><span class="es">En local obligatorio para proyectos críticos: sector público y usos de alto riesgo según el EU AI Act.</span><span class="en">On premises mandatory for critical projects: public sector and high-risk uses under the EU AI Act.</span></li>
+        </ul>
+      </div>
+      <div class="st s4" data-n="2.4"><h4><span class="es">Formar y usar bien</span><span class="en">Train and use properly</span><small><span class="es">Lo que depende de las personas.</span><span class="en">What depends on people.</span></small></h4>
+        <ul>
+          <li><span class="es">Conciencia de los riesgos específicos, como la inyección de prompt (texto escondido en un documento que da órdenes al modelo), mitigada con filtros de modelos intermedios.</span><span class="en">Awareness of the specific risks, such as prompt injection (text hidden in a document that gives the model orders), mitigated with intermediate model filters.</span></li>
+          <li><span class="es">Límites de uso para los empleados: qué no se pega nunca en un prompt.</span><span class="en">Usage limits for employees: what never gets pasted into a prompt.</span></li>
+        </ul>
+      </div>
+      </div>
       <div class="iso">ISO/IEC 27001 · 27017 · 27018 · <span class="es">RGPD</span><span class="en">GDPR</span> · EU AI Act</div>
     </div></div>
     <div class="pilar p3"><div class="n">3</div><div class="c">
       <h3><span class="es">Verificación y riesgo: el error tiene límite</span><span class="en">Verification and risk: error has a limit</span></h3>
       <p><span class="es">La tecnología no es determinista y los resultados no son reproducibles con fiabilidad. Precisamente por eso el análisis tiene que estar por escrito.</span><span class="en">The technology is not deterministic and its results are not reliably reproducible. That is precisely why the analysis has to be in writing.</span></p>
-      <ul>
-        <li><span class="es"><strong>Estudio de fiabilidad del modelo, por escrito</strong>: ground truth, acierto medido, falsos positivos y negativos, límites aceptables. Algunas auditorías lo piden; nosotros lo hacemos siempre.</span><span class="en"><strong>Model reliability study, in writing</strong>: ground truth, measured accuracy, false positives and negatives, acceptable limits. Some audits ask for it; we do it always.</span></li>
-        <li><span class="es"><strong>Verificación determinista</strong> de cada salida por código, contra la fuente.</span><span class="en"><strong>Deterministic verification</strong> of every output in code, against the source.</span></li>
-        <li><span class="es"><strong>Estadísticas de desvío</strong>: si el modelo empieza a responder distinto, se ve en los números antes que en el cliente. Revisión periódica del proceso.</span><span class="en"><strong>Drift statistics</strong>: if the model starts answering differently, it shows in the numbers before it shows in the customer. Periodic review of the process.</span></li>
-        <li><span class="es"><strong>Compromisos concretos con el proveedor</strong>: SLA con cambio de modelo si la tarea se desvía; estabilidad de versiones y preaviso.</span><span class="en"><strong>Concrete commitments with the provider</strong>: an SLA with a model change if the task drifts; version stability and advance notice.</span></li>
-        <li><span class="es"><strong>Análisis de riesgos auditado</strong> y medidas explícitas para cuando algo falla: degradar, marcar, parar. Firma humana antes de producción.</span><span class="en"><strong>Audited risk analysis</strong> and explicit measures for when something fails: degrade, flag, stop. Human signature before production.</span></li>
-      </ul>
+      <div class="steps">
+      <div class="st s1" data-n="3.1"><h4><span class="es">Estudio de fiabilidad del modelo, por escrito</span><span class="en">Model reliability study, in writing</span></h4>
+        <p><span class="es">Ground truth, acierto medido, falsos positivos y negativos, límites aceptables. Algunas auditorías lo piden; nosotros lo hacemos siempre.</span><span class="en">Ground truth, measured accuracy, false positives and negatives, acceptable limits. Some audits ask for it; we do it always.</span></p>
+      </div>
+      <div class="st s2" data-n="3.2"><h4><span class="es">Verificación determinista</span><span class="en">Deterministic verification</span></h4>
+        <p><span class="es">Cada salida se comprueba por código, contra la fuente.</span><span class="en">Every output is checked in code, against the source.</span></p>
+      </div>
+      <div class="st s3" data-n="3.3"><h4><span class="es">Estadísticas de desvío</span><span class="en">Drift statistics</span></h4>
+        <p><span class="es">Si el modelo empieza a responder distinto, se ve en los números antes que en el cliente. Revisión periódica del proceso.</span><span class="en">If the model starts answering differently, it shows in the numbers before it shows in the customer. Periodic review of the process.</span></p>
+      </div>
+      <div class="st s4" data-n="3.4"><h4><span class="es">Compromisos concretos con el proveedor</span><span class="en">Concrete commitments with the provider</span></h4>
+        <p><span class="es">SLA con cambio de modelo si la tarea se desvía; estabilidad de versiones y preaviso.</span><span class="en">An SLA with a model change if the task drifts; version stability and advance notice.</span></p>
+      </div>
+      <div class="st s5" data-n="3.5"><h4><span class="es">Análisis de riesgos auditado</span><span class="en">Audited risk analysis</span></h4>
+        <p><span class="es">Medidas explícitas para cuando algo falla: degradar, marcar, parar. Firma humana antes de producción.</span><span class="en">Explicit measures for when something fails: degrade, flag, stop. Human signature before production.</span></p>
+      </div>
+      </div>
       <div class="iso">IEC 61508 · IEC 62443 · ISO/IEC 23894</div>
     </div></div>
   </div>
