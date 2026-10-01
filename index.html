@@ -106,6 +106,22 @@ li{margin-bottom:6px}
 .st p{margin:0;font-size:.93rem}
 .st ul{margin:4px 0 0;padding-left:18px;font-size:.93rem}
 .st li{margin-bottom:4px}
+/* cómo empezar: cinco estaciones */
+.camino{display:grid;grid-template-columns:repeat(4,1fr) 1.45fr;gap:12px;position:relative;margin-top:28px}
+.camino::before{content:"";position:absolute;left:0;right:0;top:11px;height:2px;background:var(--linea)}
+.est{position:relative;padding-top:34px;display:flex;flex-direction:column}
+.est .cuando{position:absolute;top:0;left:0;font:600 .62rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--petroleo);padding:4px 10px;border-radius:999px;white-space:nowrap}
+.est .caja{background:var(--bg);border:1px solid var(--linea);border-top:4px solid var(--petroleo);border-radius:4px;padding:14px 16px 12px;flex:1;display:flex;flex-direction:column}
+.est .k{font:500 .64rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}
+.est h3{margin:4px 0 8px;font-size:1.02rem}
+.est p{font-size:.9rem;margin:0 0 10px}
+.est .lleva{font-size:.86rem;color:var(--suave);border-top:1px solid var(--linea);padding-top:8px;margin-top:auto}
+.est .gratis{display:inline-block;font:600 .64rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--verde);padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.est .l{font-size:.86rem;font-weight:600;margin:8px 0 0}
+.fases{list-style:none;padding:0;margin:0 0 10px}
+.fases li{font-size:.86rem;margin-bottom:8px}
+.fases b{display:block;font:600 .62rem var(--mono);letter-spacing:.06em;color:var(--petroleo);text-transform:uppercase;margin-bottom:1px}
+.descuenta{margin:26px 0 0;font-size:1.2rem;font-weight:600;color:var(--petroleo)}
 /* el viaje */
 #viaje p{max-width:760px}
 #viaje .lede{margin-bottom:16px}
@@ -142,6 +158,7 @@ footer .sutil a{color:#8a8f96}
   .paso{min-height:0}
   .pilar{grid-template-columns:44px 1fr}
   .pilar .c{padding:14px 14px 12px}
+  .camino{grid-template-columns:1fr;gap:18px} .camino::before{display:none}
   .steps{margin-left:4px;padding-left:22px} .st::before{left:-36px;width:22px;height:22px;font-size:.6rem} .st h4{line-height:22px}
   .pilar .n{font-size:1.1rem;padding-top:15px}
 }
@@ -158,6 +175,7 @@ footer .sutil a{color:#8a8f96}
     <a href="#regulacion"><span class="es">Regulación</span><span class="en">Regulation</span></a>
     <a href="#repos"><span class="es">Código</span><span class="en">Code</span></a>
     <a href="#viaje"><span class="es">El viaje</span><span class="en">The journey</span></a>
+    <a href="#empezar"><span class="es">Cómo empezar</span><span class="en">How to start</span></a>
     <a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
     <button class="lang" id="lang" aria-label="Idioma"><span data-l="es">ES</span> · <span data-l="en">EN</span></button>
   </nav>
@@ -180,7 +198,7 @@ footer .sutil a{color:#8a8f96}
       <span class="es"><span>La IA tiene riesgos.</span><span>El código los acota.</span><span>La norma responde de lo que queda.</span></span>
       <span class="en"><span>AI carries risk.</span><span>Code bounds it.</span><span>The standard answers for what remains.</span></span>
     </p>
-    <a class="cta" href="#contacto"><span class="es">Reunión de diagnóstico, sin coste</span><span class="en">Assessment meeting, free</span></a>
+    <a class="cta" href="#empezar"><span class="es">Reunión de diagnóstico, sin coste</span><span class="en">Assessment meeting, free</span></a>
     <a class="cta2" href="#repos"><span class="es">Ver el código</span><span class="en">See the code</span></a>
   </div>
   <div class="foto" id="foto">
@@ -416,14 +434,74 @@ footer .sutil a{color:#8a8f96}
   </p>
 </section>
 
+<!-- ================= CÓMO EMPEZAR ================= -->
+<section id="empezar">
+  <h2><span class="k"><span class="es">Cómo empezar</span><span class="en">How to start</span></span>
+    <span class="es">Cinco estaciones. Ninguna te obliga a la siguiente.</span><span class="en">Five stations. None commits you to the next.</span></h2>
+  <p class="lede">
+    <span class="es">Se empieza con una reunión sin coste y se para donde quieras. Lo pagado en una estación se descuenta de la siguiente.</span>
+    <span class="en">It starts with a free meeting and stops wherever you want. What you pay at one station is discounted from the next.</span>
+  </p>
+  <div class="camino">
+    <div class="est">
+      <span class="cuando"><span class="es">Hoy · 60–90 min</span><span class="en">Today · 60–90 min</span></span>
+      <div class="caja">
+        <span class="k"><span class="es">Diagnóstico</span><span class="en">Assessment</span></span>
+        <h3><span class="es">Reunión de diagnóstico</span><span class="en">Assessment meeting</span><span class="gratis"><span class="es">sin coste</span><span class="en">free</span></span></h3>
+        <p><span class="es">Dónde van tus datos hoy cuando alguien de tu equipo usa IA, y en cuál de los cinco pasos está la mejora esperando.</span><span class="en">Where your data goes today when someone on your team uses AI, and which of the five steps holds the improvement.</span></p>
+        <div class="lleva"><span class="es">Te llevas: la ficha de custodia medio rellena.</span><span class="en">You keep: the custody sheet, half filled in.</span></div>
+      </div>
+    </div>
+    <div class="est">
+      <span class="cuando"><span class="es">7–10 días</span><span class="en">7–10 days</span></span>
+      <div class="caja">
+        <span class="k"><span class="es">Paso 1</span><span class="en">Step 1</span></span>
+        <h3><span class="es">Estudio de viabilidad</span><span class="en">Feasibility study</span><span class="gratis"><span class="es">sin coste</span><span class="en">free</span></span></h3>
+        <p><span class="es">Investigación sobre tu empresa y tus precedentes más cercanos, entregada en una sesión de 45 minutos: potencial y retorno, las tres intervenciones que más dan, qué va con herramientas existentes y qué a medida.</span><span class="en">Research on your company and its closest precedents, delivered in a 45-minute session: potential and return, the three interventions that give the most, what runs on existing tools and what needs building.</span></p>
+        <p class="l"><a href="https://github.com/epifaneia/feasibility-study"><span class="es">El proceso, en código →</span><span class="en">The process, in code →</span></a></p>
+        <div class="lleva"><span class="es">Te llevas: el informe y el roadmap.</span><span class="en">You keep: the report and the roadmap.</span></div>
+      </div>
+    </div>
+    <div class="est">
+      <span class="cuando"><span class="es">1–2 semanas</span><span class="en">1–2 weeks</span></span>
+      <div class="caja">
+        <span class="k"><span class="es">Paso 2</span><span class="en">Step 2</span></span>
+        <h3><span class="es">Dictamen de encaje</span><span class="en">Fit assessment</span></h3>
+        <p><span class="es">La herramienta que encaja con tu caso, antes de invertir en ella: qué resuelve y qué no, frente a tus tres dolores; normativa de tu sector y de tu dato; configuración completa donde la de serie deja huecos.</span><span class="en">The tool that fits your case, before you invest in it: what it solves and what it does not, against your three pain points; the regulation of your sector and your data; full configuration where the stock one leaves gaps.</span></p>
+        <div class="lleva"><span class="es">Te llevas: el dictamen y la configuración.</span><span class="en">You keep: the verdict and the configuration.</span></div>
+      </div>
+    </div>
+    <div class="est">
+      <span class="cuando"><span class="es">5–6 semanas</span><span class="en">5–6 weeks</span></span>
+      <div class="caja">
+        <span class="k"><span class="es">Paso 3</span><span class="en">Step 3</span></span>
+        <h3><span class="es">Formación por rol</span><span class="en">Training by role</span></h3>
+        <p><span class="es">Sacar partido, con seguridad, a la herramienta elegida: sesiones por tipo de herramienta y por puesto, y acompañamiento del autoguiado a la oficina de dudas.</span><span class="en">Getting the most out of the chosen tool, safely: sessions by tool type and by role, and support from self-guided to help desk.</span></p>
+        <div class="lleva"><span class="es">Te llevas: un equipo que la usa dentro de límites.</span><span class="en">You keep: a team that uses it within limits.</span></div>
+      </div>
+    </div>
+    <div class="est">
+      <span class="cuando"><span class="es">4–8 semanas → continuo</span><span class="en">4–8 weeks → ongoing</span></span>
+      <div class="caja">
+        <span class="k"><span class="es">Paso 4</span><span class="en">Step 4</span></span>
+        <h3><span class="es">Desarrollo a medida</span><span class="en">Custom development</span></h3>
+        <p><span class="es">Un sistema propio, integrado con lo que ya usas, con controles de entrada y salida.</span><span class="en">A system of your own, integrated with what you already use, with input and output controls.</span></p>
+        <ul class="fases">
+          <li><b><span class="es">Piloto · 4–8 sem</span><span class="en">Pilot · 4–8 wks</span></b><span><span class="es">Datos reales: limpieza y contexto, con criterio de parada acordado.</span><span class="en">Real data: cleaning and context, with an agreed stop criterion.</span></span></li>
+          <li><b><span class="es">Producción · 2–4 meses</span><span class="en">Production · 2–4 months</span></b><span><span class="es">Controles, motor e integración con tu ERP o tu canal.</span><span class="en">Controls, engine and integration with your ERP or channel.</span></span></li>
+          <li><b><span class="es">Mantenimiento · continuo</span><span class="en">Maintenance · ongoing</span></b><span><span class="es">Servicios de IA, alojamiento y evolución.</span><span class="en">AI services, hosting and evolution.</span></span></li>
+        </ul>
+        <div class="lleva"><span class="es">Te llevas: el sistema, y el equipo formado por el camino.</span><span class="en">You keep: the system, and the team trained along the way.</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="descuenta"><span class="es">Cada paso se descuenta del siguiente. Nada de lo que pagas se pierde.</span><span class="en">Each step is discounted from the next. Nothing you pay is lost.</span></p>
+</section>
+
 <!-- ================= CONTACTO ================= -->
 <section id="contacto">
   <h2><span class="k"><span class="es">Contacto</span><span class="en">Contact</span></span>
-    <span class="es">Reunión de diagnóstico, 60 minutos, sin coste</span><span class="en">Assessment meeting, 60 minutes, free</span></h2>
-  <p class="lede">
-    <span class="es">Revisamos dónde van tus datos hoy cuando alguien de tu equipo usa IA, y qué paso de los cinco tiene la mejora esperando. Te quedas con la ficha de custodia medio rellena.</span>
-    <span class="en">We go through where your data goes today when someone on your team uses AI, and which of the five steps holds the improvement. You keep the half-filled custody sheet.</span>
-  </p>
+    <span class="es">Escríbeme</span><span class="en">Get in touch</span></h2>
   <p><a class="cta" href="mailto:danielmartin@epifaneia.dev">danielmartin@epifaneia.dev</a> <a class="cta2" href="https://www.linkedin.com/in/epifaneia">LinkedIn</a> <a class="cta2" href="https://github.com/epifaneia">GitHub</a> <a class="cta2" href="https://github.com/epifaneia/cv">CV</a></p>
 </section>
 
