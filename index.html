@@ -3,16 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Epifaneia · Daniel Martín</title>
+<title>Daniel Martín · AI Engineer</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta property="og:title" content="Epifaneia · Diseño de soluciones de IA">
-<meta property="og:description" content="La IA tiene riesgos. El código los acota. La norma responde de lo que queda. Código, IA y regulación.">
+<meta property="og:title" content="Daniel Martín · AI Engineer">
+<meta property="og:description" content="AI Engineer en Sevilla. Aplicaciones de IA que se pueden auditar: el modelo interpreta, el código verifica. Código público y cifras medidas.">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_GB">
+<link rel="canonical" href="https://epifaneia.dev/">
 <meta property="og:image" content="https://epifaneia.dev/og.png">
 <meta property="og:url" content="https://epifaneia.dev">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="description" content="Diseño de soluciones de IA. Código, IA y regulación. / AI solution design. Code, AI and regulation.">
+<meta name="description" content="Daniel Martín, AI Engineer en Sevilla: aplicaciones de IA que se pueden auditar, con código público y cifras medidas. / AI Engineer in Seville: auditable AI applications, public code, measured numbers.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Daniel Martín","jobTitle":"AI Engineer","url":"https://epifaneia.dev","email":"mailto:danielmartin@epifaneia.dev","address":{"@type":"PostalAddress","addressLocality":"Sevilla","addressCountry":"ES"},"sameAs":["https://github.com/epifaneia","https://www.linkedin.com/in/epifaneia/"]}</script>
 <style>
 :root{
   /* Paleta P1 · petróleo sobre papel. Todos los textos pasan AA (4,5:1) sobre --bg y --oat. */
@@ -135,6 +139,10 @@ li{margin-bottom:6px}
 .repo h3{margin-bottom:6px}
 .repo p{font-size:.93rem;color:var(--suave)}
 .repo .l{font-weight:600;font-size:.92rem}
+.grupo{margin:34px 0 12px;font:500 .72rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--petroleo)}
+.grupo:first-of-type{margin-top:6px}
+.repo.dest{background:var(--petroleo-bg);border-color:var(--petroleo)}
+.disp{font:500 .8rem var(--mono);color:var(--verde);margin:0 0 26px}
 .cierre{font-size:1.25rem;color:var(--petroleo);font-weight:600;margin:28px 0 0}
 footer{padding:44px 0 64px;border-top:1px solid var(--linea);color:var(--suave);font-size:.9rem}
 footer .sutil{margin-top:22px;font-size:.82rem;color:#8a8f96}
@@ -176,10 +184,10 @@ footer .sutil a{color:#8a8f96}
     <a href="#pasos"><span class="es">Cinco pasos</span><span class="en">Five steps</span></a>
     <a href="#regulacion"><span class="es">Regulación</span><span class="en">Regulation</span></a>
     <a href="#repos"><span class="es">Código</span><span class="en">Code</span></a>
-    <a href="#viaje"><span class="es">El viaje</span><span class="en">The journey</span></a>
-    <a href="#empezar"><span class="es">Cómo empezar</span><span class="en">How to start</span></a>
+    <a href="#viaje"><span class="es">Quién soy</span><span class="en">About me</span></a>
+    <a href="cv/Daniel_Martin_AI_Engineer_ES.pdf" class="es">CV</a><a href="cv/Daniel_Martin_AI_Engineer_EN.pdf" class="en">CV</a>
     <a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
-    <button class="lang" id="lang" aria-label="Idioma"><span data-l="es">ES</span> · <span data-l="en">EN</span></button>
+    <button class="lang" id="lang" aria-label="Idioma / Language"><span data-l="es">ES</span> · <span data-l="en">EN</span></button>
   </nav>
 </div>
 </header>
@@ -192,16 +200,17 @@ footer .sutil a{color:#8a8f96}
 <div class="hero">
   <div>
     <p class="quien"><span class="es">Daniel Martín · AI Engineer · Sevilla</span><span class="en">Daniel Martín · AI Engineer · Seville</span></p>
-    <h1><span class="es">Diseño de soluciones de IA</span><span class="en">AI solution design</span></h1>
+    <h1><span class="es">Aplicaciones de IA que se pueden auditar</span><span class="en">AI applications you can audit</span></h1>
     <p class="claim">
-      <span class="es">Diseño y construyo aplicaciones de IA para empresas donde la normativa manda. El modelo interpreta; el código verifica cada respuesta y deja registro de quién hizo qué. Con código público y cifras medidas.</span>
-      <span class="en">I design and build AI applications for companies where regulation rules. The model interprets; code verifies every answer and keeps a record of who did what. With public code and measured numbers.</span>
+      <span class="es">Diseño y construyo aplicaciones de IA para entornos donde la normativa manda. El modelo interpreta; el código verifica cada respuesta y deja registro de quién hizo qué. Todo con código público y cifras medidas. Busco incorporarme a un equipo que lleve IA a producción.</span>
+      <span class="en">I design and build AI applications for settings where regulation rules. The model interprets; code verifies every answer and keeps a record of who did what. All with public code and measured numbers. I am looking to join a team that takes AI into production.</span>
     </p>
     <p class="frases">
       <span class="es"><span>La IA tiene riesgos.</span><span>El código los acota.</span><span>La norma responde de lo que queda.</span></span>
       <span class="en"><span>AI carries risk.</span><span>Code bounds it.</span><span>The standard answers for what remains.</span></span>
     </p>
-    <a class="cta" href="#empezar"><span class="es">Estudio de viabilidad, sin coste</span><span class="en">Feasibility study, free</span></a>
+    <p class="disp"><span class="es">Disponibilidad inmediata · Sevilla o remoto</span><span class="en">Available now · Seville or remote</span></p>
+    <a class="cta es" href="cv/Daniel_Martin_AI_Engineer_ES.pdf">CV en PDF</a><a class="cta en" href="cv/Daniel_Martin_AI_Engineer_EN.pdf">CV as PDF</a>
     <a class="cta2" href="#repos"><span class="es">Ver el código</span><span class="en">See the code</span></a>
   </div>
   <div class="foto" id="foto">
@@ -225,33 +234,32 @@ footer .sutil a{color:#8a8f96}
     <div class="card b">
       <span class="cab"><span class="es">Código</span><span class="en">Code</span></span>
       <h3><span class="es">La habilidad de fondo: dar forma a las soluciones</span><span class="en">The underlying skill: giving solutions their shape</span></h3>
-      <p><span class="es">Una idea no es una solución hasta que tiene pasos, contratos entre pasos y pruebas. Eso es lo que sabemos hacer.</span><span class="en">An idea is not a solution until it has steps, contracts between steps and tests. That is what we know how to do.</span></p>
+      <p><span class="es">Una idea no es una solución hasta que tiene pasos, contratos entre pasos y pruebas. Eso es lo que sé hacer.</span><span class="en">An idea is not a solution until it has steps, contracts between steps and tests. That is what I know how to do.</span></p>
       <ul>
         <li>Python · <span class="es">pipelines por etapas, salida estructurada, tests</span><span class="en">staged pipelines, structured output, tests</span></li>
         <li><span class="es">Metodología agile: cada vuelta entrega algo usable</span><span class="en">Agile: every iteration ships something usable</span></li>
         <li><span class="es">Análisis de datos: pandas, SQL, SQLite, embeddings</span><span class="en">Data analysis: pandas, SQL, SQLite, embeddings</span></li>
         <li><span class="es">Documentos: PDF, Excel, audio, XML</span><span class="en">Documents: PDF, spreadsheets, audio, XML</span></li>
         <li><span class="es">Modelos en local y en nube con el mismo contrato</span><span class="en">Local and cloud models under the same contract</span></li>
-        <li>FastAPI · TypeScript · Docker · Git</li>
+        <li>FastAPI · Django · TypeScript · Docker · Git</li>
       </ul>
-      <p class="l"><a href="https://github.com/epifaneia/ctsm"><span class="es">Prueba de concepto: CTSM →</span><span class="en">Proof of concept: CTSM →</span></a></p>
+      <p class="l"><a href="https://github.com/epifaneia/ordena"><span class="es">Integrado con un ERP: Ordena →</span><span class="en">Wired into an ERP: Ordena →</span></a></p>
     </div>
     <div class="card s">
       <span class="cab">IA</span>
       <h3><span class="es">Los cinco pasos de toda app</span><span class="en">The five steps of every app</span></h3>
       <p><span class="es">Cualquier aplicación con IA tiene cinco pasos: limpieza, contexto, guardarraíl de entrada, proceso y guardarraíl de salida. Solo uno invoca un modelo. Los otros cuatro son código.</span><span class="en">Every AI application has five steps: cleaning, context, input guardrail, process and output guardrail. Only one invokes a model. The other four are code.</span></p>
-      <p><span class="es">El kit tiene ya, de forma modular y escalable, las herramientas frontera de cada uno de los cinco pasos. Listas para encajar en tu negocio: el 80 % son piezas, el 20 % es el guardarraíl de salida que exige tu destino.</span><span class="en">The kit already holds, modular and scalable, the frontier tools for each of the five steps. Ready to fit your business: 80 % is parts, 20 % is the output guardrail your destination demands.</span></p>
+      <p><span class="es">El kit reúne las piezas de cada paso, sacadas de pipelines que han corrido sobre datos reales. Un pipeline nuevo empieza donde terminó el anterior y dedica el tiempo a lo único que siempre es nuevo: el guardarraíl de salida.</span><span class="en">The kit gathers the parts of each step, taken from pipelines that have run on real data. A new pipeline starts where the last one ended and spends its time on the only thing that is always new: the output guardrail.</span></p>
       <p class="l"><a href="https://github.com/epifaneia/toolkit"><span class="es">El kit →</span><span class="en">The kit →</span></a></p>
     </div>
     <div class="card o">
       <span class="cab"><span class="es">Regulación</span><span class="en">Regulation</span></span>
-      <h3><span class="es">Sectores exigentes, regulación dura</span><span class="en">Demanding sectors, hard regulation</span></h3>
-      <p><span class="es">Hemos colaborado con marcas de los sectores más exigentes, con la regulación más dura. Lo que pide la IA ya lo traíamos de antes.</span><span class="en">We have worked with brands from the most demanding sectors, under the hardest regulation. What AI now requires, we already brought with us.</span></p>
+      <h3><span class="es">Diseñado para auditarse</span><span class="en">Built to be audited</span></h3>
+      <p><span class="es">He trabajado en automoción, donde un requisito mal leído acaba en producción. Cada repositorio lleva la custodia en el código: quién lo ejecutó, qué salió de la máquina y quién firma.</span><span class="en">I have worked in automotive, where a misread requirement ends up in production. Every repository carries custody in code: who ran it, what left the machine and who signs.</span></p>
       <ul>
-        <li>ISO 9001 · ISO/IEC 27001 <span class="pill t"><span class="es">lo traemos</span><span class="en">we bring it</span></span></li>
-        <li><span class="es">Sistemas críticos: IEC 61508 · IEC 62443</span><span class="en">Critical systems: IEC 61508 · IEC 62443</span> <span class="pill t"><span class="es">lo traemos</span><span class="en">we bring it</span></span></li>
-        <li>RGPD · <span class="es">residencia en la UE</span><span class="en">EU data residency</span> <span class="pill t"><span class="es">lo traemos</span><span class="en">we bring it</span></span></li>
-        <li>EU AI Act · ISO/IEC 42001 · 23894 <span class="pill n"><span class="es">nuevo</span><span class="en">new</span></span></li>
+        <li>Polarion · ReqIF <span class="pill t"><span class="es">en uso real</span><span class="en">in real use</span></span></li>
+        <li><span class="es">RGPD · el dato en local por defecto</span><span class="en">GDPR · data stays local by default</span> <span class="pill t"><span class="es">en el código</span><span class="en">in the code</span></span></li>
+        <li>EU AI Act · ISO/IEC 42001 · 27001 · 23894 <span class="pill n"><span class="es">como referencia</span><span class="en">as reference</span></span></li>
       </ul>
       <p class="l"><a href="#regulacion"><span class="es">Los tres pilares →</span><span class="en">The three pillars →</span></a></p>
     </div>
@@ -278,8 +286,8 @@ footer .sutil a{color:#8a8f96}
     <span><i style="background:var(--ambar)"></i><span class="es">el modelo interpreta</span><span class="en">the model interprets</span></span>
   </div>
   <p style="margin-top:22px">
-    <span class="es"><strong>Lo que hemos medido:</strong> la comunidad se ha volcado en el paso 4. Con los pasos 1, 2, 3 y 5 bien hechos, el proceso cognitivo que queda en medio cabe en una llamada simple, y el resultado es más potente, más barato y, sobre todo, auditable.</span>
-    <span class="en"><strong>What we have measured:</strong> the community has poured itself into step 4. With steps 1, 2, 3 and 5 done properly, the cognitive work left in the middle fits in one simple call, and the result is stronger, cheaper and, above all, auditable.</span>
+    <span class="es"><strong>Lo medido.</strong> Con los pasos 1, 2, 3 y 5 bien hechos, lo que queda en medio cabe en una llamada simple. En CTSM, un modelo local de 14B en una GPU de 6 GB acierta 9 de 9 requisitos contra un ground truth hecho a mano, sin un solo falso «cumple». El paso 5 caza lo que un umbral de parecido deja pasar: el modelo citó «4 to 16 MHz» y el manual dice «3 to 25». En reqif-extractor, sin el paso 5, el modelo inventaba 167 de 170 identificadores.</span>
+    <span class="en"><strong>Measured.</strong> With steps 1, 2, 3 and 5 done properly, what is left in the middle fits in one simple call. In CTSM, a local 14B model on a 6 GB GPU gets 9 of 9 requirements right against a hand-built ground truth, with not a single false "compliant". Step 5 catches what a similarity threshold lets through: the model quoted "4 to 16 MHz" and the manual says "3 to 25". In reqif-extractor, without step 5, the model invented 167 of 170 identifiers.</span>
   </p>
 </section>
 
@@ -298,7 +306,7 @@ footer .sutil a{color:#8a8f96}
       <ul>
         <li><span class="es"><strong>Registro obligatorio</strong>: usuario, fecha, entrada, salida, versión del modelo y del prompt. Inmutable y exportable para auditoría.</span><span class="en"><strong>Mandatory logging</strong>: user, date, input, output, model and prompt version. Immutable and exportable for audit.</span></li>
         <li><span class="es"><strong>Firma humana</strong> (<em>human in the loop</em>) antes de que cualquier salida llegue a un cliente, a un fichero maestro o a producción. Quién firma, queda registrado.</span><span class="en"><strong>Human signature</strong> (<em>human in the loop</em>) before any output reaches a customer, a master file or production. Who signs is recorded.</span></li>
-        <li><span class="es"><strong>Control de accesos propio, por encima del nativo</strong>: quién puede ejecutar qué proceso y sobre qué datos, con revisión periódica.</span><span class="en"><strong>Our own access control, on top of the native one</strong>: who may run which process on which data, reviewed periodically.</span></li>
+        <li><span class="es"><strong>Control de accesos propio, por encima del nativo</strong>: quién puede ejecutar qué proceso y sobre qué datos, con revisión periódica.</span><span class="en"><strong>Custom access control, on top of the native one</strong>: who may run which process on which data, reviewed periodically.</span></li>
         <li><span class="es"><strong>Versionado</strong>: qué modelo, qué prompt y qué guardarraíl respondieron cada día. Sin eso no hay auditoría posible.</span><span class="en"><strong>Versioning</strong>: which model, which prompt and which guardrail answered on each day. Without it there is no audit possible.</span></li>
       </ul>
       <div class="iso">ISO 9001 · ISO/IEC 42001</div>
@@ -318,9 +326,9 @@ footer .sutil a{color:#8a8f96}
       </div>
       <div class="st s2" data-n="2.2"><h4><span class="es">Configurar las herramientas</span><span class="en">Configure the tools</span><small><span class="es">Lo que la máquina impide por sí sola.</span><span class="en">What the machine prevents on its own.</span></small></h4>
         <ul>
-          <li><span class="es">Permisos por nivel de acceso: nativos cuando los hay (Copilot hereda los de Microsoft 365), nuestros cuando no.</span><span class="en">Permissions by access level: native where they exist (Copilot inherits Microsoft 365 permissions), our own where they do not.</span></li>
+          <li><span class="es">Permisos por nivel de acceso: nativos cuando los hay (Copilot hereda los de Microsoft 365), propios cuando no.</span><span class="en">Permissions by access level: native where they exist (Copilot inherits Microsoft 365 permissions), custom where they do not.</span></li>
           <li><span class="es">Anonimización de datos personales antes de que lleguen al modelo (p. ej. Presidio, de Microsoft, código abierto).</span><span class="en">Anonymisation of personal data before it reaches the model (e.g. Presidio, Microsoft's open-source library).</span></li>
-          <li><span class="es">Procesos aislados: cada uno ve solo lo suyo. Verificación en dos pasos.</span><span class="en">Isolated processes: each one sees only its own. Two-step verification.</span></li>
+          <li><span class="es">Procesos aislados: cada uno ve solo lo suyo. Verificación en dos pasos.</span><span class="en">Isolated processes: each one sees only its own. Two-factor authentication.</span></li>
         </ul>
       </div>
       <div class="st s3" data-n="2.3"><h4><span class="es">Configurar los procesos</span><span class="en">Configure the processes</span><small><span class="es">Lo que la empresa decide por escrito.</span><span class="en">What the company decides in writing.</span></small></h4>
@@ -342,7 +350,7 @@ footer .sutil a{color:#8a8f96}
       <h3><span class="es">Verificación y riesgo: el error tiene límite</span><span class="en">Verification and risk: error has a limit</span></h3>
       <p><span class="es">La tecnología no es determinista y los resultados no son reproducibles con fiabilidad. Precisamente por eso el análisis tiene que estar por escrito.</span><span class="en">The technology is not deterministic and its results are not reliably reproducible. That is precisely why the analysis has to be in writing.</span></p>
       <ul>
-        <li><span class="es"><strong>Estudio de fiabilidad del modelo, por escrito</strong>: ground truth, acierto medido, falsos positivos y negativos, límites aceptables. Algunas auditorías lo piden; nosotros lo hacemos siempre.</span><span class="en"><strong>Model reliability study, in writing</strong>: ground truth, measured accuracy, false positives and negatives, acceptable limits. Some audits ask for it; we do it always.</span></li>
+        <li><span class="es"><strong>Estudio de fiabilidad del modelo, por escrito</strong>: ground truth, acierto medido, falsos positivos y negativos, límites aceptables. Algunas auditorías lo piden; yo lo hago siempre.</span><span class="en"><strong>Model reliability study, in writing</strong>: ground truth, measured accuracy, false positives and negatives, acceptable limits. Some audits ask for it; I always do it.</span></li>
         <li><span class="es"><strong>Verificación determinista</strong> de cada salida por código, contra la fuente.</span><span class="en"><strong>Deterministic verification</strong> of every output in code, against the source.</span></li>
         <li><span class="es"><strong>Estadísticas de desvío</strong>: si el modelo empieza a responder distinto, se ve en los números antes que en el cliente. Revisión periódica del proceso.</span><span class="en"><strong>Drift statistics</strong>: if the model starts answering differently, it shows in the numbers before it shows in the customer. Periodic review of the process.</span></li>
         <li><span class="es"><strong>Compromisos concretos con el proveedor</strong>: SLA con cambio de modelo si la tarea se desvía; estabilidad de versiones y preaviso.</span><span class="en"><strong>Concrete commitments with the provider</strong>: an SLA with a model change if the task drifts; version stability and advance notice.</span></li>
@@ -359,35 +367,44 @@ footer .sutil a{color:#8a8f96}
 
 <!-- ================= REPOS ================= -->
 <section id="repos">
-  <h2><span class="k"><span class="es">Los pilares, en el código</span><span class="en">The pillars, in code</span></span>
-    <span class="es">Seis repositorios públicos</span><span class="en">Six public repositories</span></h2>
+  <h2><span class="k"><span class="es">Las pruebas, en el código</span><span class="en">The proof, in code</span></span>
+    <span class="es">Siete repositorios públicos</span><span class="en">Seven public repositories</span></h2>
   <p class="lede">
-    <span class="es">Datos públicos, cifras medidas, y en cada README una sección de limitaciones.</span>
-    <span class="en">Public data, measured numbers, and in every README a section of limitations.</span>
+    <span class="es">Datos públicos, cifras medidas, y en cada README una sección de limitaciones.</span><span class="en">Public data, measured numbers, and in every README a section of limitations.</span>
   </p>
+  <h3 class="grupo"><span class="es">IA · los cinco pasos</span><span class="en">AI · the five steps</span></h3>
   <div class="repos">
-    <div class="repo">
-      <div class="k"><span class="es">Código · prueba de concepto</span><span class="en">Code · proof of concept</span></div>
+    <div class="repo dest">
+      <div class="k"><span class="es">IA · demo en un comando</span><span class="en">AI · one-command demo</span></div>
       <h3>CTSM</h3>
-      <p><span class="es">Audita requisitos de cliente contra la documentación del proveedor y devuelve el mismo fichero con el veredicto y la cita anclada a su página. El modelo nunca escribe ubicaciones. Funciona sin red.</span><span class="en">Audits customer requirements against supplier documentation and returns the same file with the verdict and the citation anchored to its page. The model never writes locations. Works offline.</span></p>
+      <p><span class="es">Audita requisitos de cliente contra el manual del proveedor y devuelve el mismo ReqIF con el veredicto y la cita en su página. El modelo nunca escribe una ubicación, y el código comprueba cada cita contra el manual: en su propia medición, el modelo citó «4 to 16 MHz» y el manual dice «3 to 25». Local, sin red; una interfaz con demo que se abre sin instalar ningún modelo.</span><span class="en">Audits customer requirements against the supplier's manual and returns the same ReqIF with the verdict and the quote on its page. The model never writes a location, and code checks every quote against the manual: in its own measured run, the model quoted "4 to 16 MHz" and the manual says "3 to 25". Local, offline; an interface with a demo that opens without installing any model.</span></p>
       <p class="l"><a href="https://github.com/epifaneia/ctsm">github.com/epifaneia/ctsm →</a></p>
     </div>
     <div class="repo">
-      <div class="k"><span class="es">Código · prueba de concepto</span><span class="en">Code · proof of concept</span></div>
+      <div class="k"><span class="es">Código · en uso real</span><span class="en">Code · in real use</span></div>
       <h3><span class="es">Extractor ReqIF</span><span class="en">ReqIF extractor</span></h3>
-      <p><span class="es">De un PDF de especificación a un fichero de requisitos importable, con jerarquía, identificadores verbatim y auditoría de posición. Veinte veces más barato que mirar el PDF entero.</span><span class="en">From a specification PDF to an importable requirements file, with hierarchy, verbatim identifiers and positional audit. Twenty times cheaper than looking at the whole PDF.</span></p>
+      <p><span class="es">De un PDF de especificación a un fichero de requisitos importable, con jerarquía, identificadores verbatim y auditoría de posición. Veinte veces más barato que mirar el PDF entero. En uso de junio a septiembre de 2026: encargos recurrentes de un ingeniero senior de un proveedor de automoción Tier 1, cada entrega revisada por él.</span><span class="en">From a specification PDF to an importable requirements file, with hierarchy, verbatim identifiers and positional audit. Twenty times cheaper than looking at the whole PDF. In use from June to September 2026: recurring engagements for a senior engineer at a Tier 1 automotive supplier, every delivery reviewed by him.</span></p>
       <p class="l"><a href="https://github.com/epifaneia/reqif-extractor">github.com/epifaneia/reqif-extractor →</a></p>
     </div>
     <div class="repo">
-      <div class="k">IA · <span class="es">el kit</span><span class="en">the kit</span></div>
+      <div class="k"><span class="es">IA · el kit</span><span class="en">AI · the kit</span></div>
       <h3><span class="es">El kit</span><span class="en">The kit</span></h3>
-      <p><span class="es">Las piezas frontera de los cinco pasos, extraídas de los pipelines anteriores, modulares y escalables. Se monta un pipeline nuevo poniendo piezas y dedicando el tiempo al guardarraíl de salida.</span><span class="en">The frontier parts of the five steps, extracted from the pipelines above, modular and scalable. A new pipeline is assembled from parts, with the time spent on the output guardrail.</span></p>
+      <p><span class="es">Las piezas de los cinco pasos, sacadas de los pipelines de arriba: limpieza, contexto, citas verificables, política de identificadores, comparación de ida y vuelta y los tres cables de custodia. Un pipeline nuevo empieza con ellas.</span><span class="en">The parts of the five steps, taken from the pipelines above: cleaning, context, verifiable quotes, identifier policy, round-trip comparison and the three custody wires. A new pipeline starts with them.</span></p>
       <p class="l"><a href="https://github.com/epifaneia/toolkit">github.com/epifaneia/toolkit →</a></p>
+    </div>
+  </div>
+  <h3 class="grupo"><span class="es">Código · integrado con lo que ya usa una empresa</span><span class="en">Code · wired into what a company already uses</span></h3>
+  <div class="repos">
+    <div class="repo dest">
+      <div class="k"><span class="es">Código · integración con un ERP</span><span class="en">Code · ERP integration</span></div>
+      <h3>Ordena</h3>
+      <p><span class="es">Un correo a medias o una nota de voz de WhatsApp entra en Business Central como pedido sin registrar: cliente, artículos y fecha resueltos por código contra los maestros del ERP, lo dudoso marcado y una persona que valida. Modelo y transcripción en local, autenticación con Entra ID y siete decisiones de diseño documentadas, de «Business Central o ERP a medida» a «hacer o comprar».</span><span class="en">A half-written email or a WhatsApp voice note lands in Business Central as an unposted sales order: customer, items and date resolved in code against the ERP's master data, anything doubtful flagged, and a person who validates. Local model and transcription, Entra ID authentication and seven documented design decisions, from "Business Central or a custom ERP" to "build or buy".</span></p>
+      <p class="l"><a href="https://github.com/epifaneia/ordena">github.com/epifaneia/ordena →</a></p>
     </div>
     <div class="repo">
       <div class="k"><span class="es">Código · full stack</span><span class="en">Code · full stack</span></div>
       <h3><span class="es">Estudio de viabilidad de IA</span><span class="en">AI feasibility study</span></h3>
-      <p><span class="es">De un formulario de reunión a un estudio en PDF: una investigación autónoma por cientos de páginas, convertida por código en un informe con nuestra narrativa y nuestro orden, que responde a nuestras preguntas y cita sus fuentes. Formulario, servidor, API y panel del consultor.</span><span class="en">From a meeting form to a PDF study: an autonomous research run across hundreds of pages, turned by code into a report with our narrative and our order, one that answers our questions and cites its sources. Form, server, API and consultant panel.</span></p>
+      <p><span class="es">De un formulario a un estudio en PDF: una investigación autónoma por cientos de páginas, convertida por código en un informe con estructura fija, que responde a preguntas fijas y cita sus fuentes. Formulario, servidor FastAPI, panel y revisión humana antes de enviar.</span><span class="en">From a form to a PDF study: an autonomous research run across hundreds of pages, turned by code into a report with a fixed structure that answers fixed questions and cites its sources. Form, FastAPI server, panel and human review before sending.</span></p>
       <p class="l"><a href="https://github.com/epifaneia/feasibility-study">github.com/epifaneia/feasibility-study →</a></p>
     </div>
     <div class="repo">
@@ -396,6 +413,9 @@ footer .sutil a{color:#8a8f96}
       <p><span class="es">Pregunta en lenguaje natural a todo tu espacio de trabajo: Discord y Trello por API, índice local en un solo fichero, actas transcritas en local y un bot que responde al momento el estado de cada proyecto. Cero euros.</span><span class="en">Ask your whole workspace in plain language: Discord and Trello over their APIs, a single-file local index, minutes transcribed locally and a bot that answers the state of every project on the spot. Zero euros.</span></p>
       <p class="l"><a href="https://github.com/epifaneia/askhub">github.com/epifaneia/askhub →</a></p>
     </div>
+  </div>
+  <h3 class="grupo"><span class="es">El método, aguantando el cambio</span><span class="en">The method, under change</span></h3>
+  <div class="repos">
     <div class="repo">
       <div class="k"><span class="es">Código · proyecto personal</span><span class="en">Code · personal project</span></div>
       <h3>NOGUM</h3>
@@ -403,34 +423,33 @@ footer .sutil a{color:#8a8f96}
       <p class="l"><a href="https://github.com/epifaneia/nogum">github.com/epifaneia/nogum →</a> · <a href="https://epifaneia.dev/nogum/"><span class="es">consultarlo</span><span class="en">read it</span> →</a></p>
     </div>
   </div>
-  <p class="cierre"><span class="es">Medimos primero. Decidimos sobre evidencia.</span><span class="en">We measure first. We decide on evidence.</span></p>
+  <p class="cierre"><span class="es">Mido primero. Decido sobre evidencia.</span><span class="en">I measure first. I decide on evidence.</span></p>
 </section>
 
 <!-- ================= EL VIAJE ================= -->
 <section id="viaje">
   <h2><span class="k"><span class="es">El viaje</span><span class="en">The journey</span></span>
-    <span class="es">Epifaneia</span><span class="en">Epifaneia</span></h2>
+    <span class="es">Quién soy</span><span class="en">About me</span></h2>
   <p class="lede">
     <span class="es"><strong>Epifaneia.</strong> Del griego ἐπιφάνεια: la manifestación de los dioses. El susurro divino. Las palabras que ya no puedes olvidar. La idea feliz que rompe un paradigma.</span>
-    <span class="en"><strong>Epifaneia.</strong> From the Greek ἐπιφάνεια: the manifestation of the gods. The divine whisper. The words you can no longer forget. The happy idea that breaks a paradigm.</span>
+    <span class="en"><strong>Epifaneia.</strong> From the Greek ἐπιφάνεια: the manifestation of the gods. The divine whisper. The words you can no longer forget. The sudden idea that breaks a paradigm.</span>
   </p>
   <p>
     <span class="es">He perseguido siempre esa sensación. La física me enamoró cuando entendí que el mundo de lo absurdamente pequeño y el mundo de lo incomprensiblemente grande rompen todos nuestros conceptos previos. La filosofía hizo lo propio con el alma humana y con la política, y me dio unas lecciones de humildad epistemológica que rompieron por completo la belleza matemática del laboratorio. Ahora, la IA. Todo lo que creía posible se rompe cada año. Qué digo. Cada mes.</span>
-    <span class="en">I have always chased that feeling. Physics made me fall in love when I understood that the world of the absurdly small and the world of the incomprehensibly large break every concept we came with. Philosophy did the same with the human soul and with politics, and taught me lessons in epistemic humility that shattered the mathematical beauty of the laboratory. Now, AI. Everything I believed possible breaks every year. What am I saying. Every month.</span>
+    <span class="en">I have always chased that feeling. Physics made me fall in love when I understood that the world of the absurdly small and the world of the incomprehensibly large break every concept we came with. Philosophy did the same with the human soul and with politics, and taught me lessons in epistemic humility that shattered the mathematical beauty of the laboratory. Now, AI. Everything I believed possible breaks every year. Make that every month.</span>
   </p>
   <p>
     <span class="es">De cada viaje extraje lecciones que caben en una hoja de papel y que cambiaron mi visión del mundo para siempre. Aquí comparto las que cambiaron mi forma de trabajar. Si el proyecto rueda, comparto el resto.</span>
     <span class="en">From each journey I took lessons that fit on a sheet of paper and changed how I see the world for good. Here I share the ones that changed how I work. If the project rolls, I will share the rest.</span>
   </p>
-  <h3><span class="es">Quién</span><span class="en">Who</span></h3>
-  <p class="lema"><span class="es">Aprendiz de todo, maestro de nada.</span><span class="en">Jack of all trades, master of none.</span></p>
+  <h3><span class="es">De dónde vengo</span><span class="en">Where I come from</span></h3>
   <p>
     <span class="es">Mi viaje no se entiende sin ninguno de sus pasos. La física me dio la base. La filosofía me enseñó a no confiar en ella. El código, a convertir la lógica en máquinas vivas. Y estudiar la IA no fue estudiarla en el vacío: fue hacer que todas las piezas encajaran. De ese viaje nacen los cinco pasos de diseño y los pilares de seguridad.</span>
     <span class="en">My journey makes no sense without any one of its steps. Physics gave me the base. Philosophy taught me not to trust it. Code, to turn logic into living machines. And studying AI was not studying it in a vacuum: it was making all the pieces fit. From that journey come the five design steps and the security pillars.</span>
   </p>
   <p>
     <span class="es">Parecen una idea feliz, pero fueron el fruto de un estudio apasionado sobre una base amplia. Además, tuve la suerte de poner mis ideas en práctica en los entornos más sujetos a normativa: la automoción.</span>
-    <span class="en">They look like a happy idea, but they were the fruit of passionate study on a broad base. And I was lucky enough to put my ideas into practice in the environments most bound by regulation: automotive.</span>
+    <span class="en">They look like a flash of insight, but they were the fruit of passionate study on a broad base. And I was lucky enough to put my ideas into practice in the environments most bound by regulation: automotive.</span>
   </p>
   <p>
     <span class="es">Y funcionaba. La idea terminó. Comienza el trabajo. He semiautomatizado la creación de herramientas de automatización.</span>
@@ -443,67 +462,11 @@ footer .sutil a{color:#8a8f96}
   </p>
 </section>
 
-<!-- ================= CÓMO EMPEZAR ================= -->
-<section id="empezar">
-  <h2><span class="k"><span class="es">Cómo empezar</span><span class="en">How to start</span></span>
-    <span class="es">Cuatro estaciones. Ninguna te obliga a la siguiente.</span><span class="en">Four stations. None commits you to the next.</span></h2>
-  <p class="lede">
-    <span class="es">Se empieza con un estudio sin coste y se para donde quieras. Lo pagado en una estación se descuenta de la siguiente.</span>
-    <span class="en">It starts with a free study and stops wherever you want. What you pay at one station is discounted from the next.</span>
-  </p>
-  <div class="camino">
-    <div class="est">
-      <span class="cuando"><span class="es">1 semana</span><span class="en">1 week</span></span>
-      <div class="caja">
-        <span class="k"><span class="es">Paso 1</span><span class="en">Step 1</span></span>
-        <h3><span class="es">Estudio de viabilidad</span><span class="en">Feasibility study</span><span class="gratis"><span class="es">sin coste</span><span class="en">free</span></span></h3>
-        <p><span class="es">Una reunión para rellenar juntos el formulario, o lo rellenas tú con el enlace de abajo. En una semana, el informe revisado a mano: potencial y retorno, las tres intervenciones que más dan, qué va con herramientas existentes y qué a medida. Y una reunión para discutir los resultados, acordar las tareas y activar el paso 2.</span><span class="en">A meeting to fill in the form together, or you fill it in yourself with the link below. Within a week, the report, reviewed by hand: potential and return, the three interventions that give the most, what runs on existing tools and what needs building. Then a meeting to discuss the results, agree the tasks and activate step 2.</span></p>
-        <p class="l"><a href="#contacto"><span class="es">Empezamos cuando quieras: escríbeme →</span><span class="en">We start whenever you want: write to me →</span></a></p>
-        <p class="l" style="margin-top:4px"><a href="https://github.com/epifaneia/feasibility-study"><span class="es">El proceso, en código →</span><span class="en">The process, in code →</span></a></p>
-        <div class="lleva"><span class="es">Te llevas: el informe y el roadmap.</span><span class="en">You keep: the report and the roadmap.</span></div>
-      </div>
-    </div>
-    <div class="est">
-      <span class="cuando"><span class="es">1–2 semanas</span><span class="en">1–2 weeks</span></span>
-      <div class="caja">
-        <span class="k"><span class="es">Paso 2</span><span class="en">Step 2</span></span>
-        <h3><span class="es">Dictamen de encaje</span><span class="en">Fit assessment</span></h3>
-        <p><span class="es">De las tareas acordadas, las tres que no necesitan una herramienta nueva. Para cada una, la propuesta bajada a tierra: qué herramienta usar, cómo configurarla conforme a normativa, qué acuerdos concretos pedir al proveedor y cómo, y cómo usarla de forma segura.</span><span class="en">From the agreed tasks, the three that need no new tool. For each one, the proposal brought down to earth: which tool to use, how to configure it in line with regulation, which specific agreements to ask the provider for and how, and how to use it safely.</span></p>
-        <p class="l"><a href="#regulacion"><span class="es">Los tres pilares →</span><span class="en">The three pillars →</span></a></p>
-        <div class="lleva"><span class="es">Te llevas: un informe con instrucciones y enlaces para hacerlo tú. Si quieres acompañamiento, es el paso 3.</span><span class="en">You keep: a report with instructions and links to do it yourself. If you want support, that is step 3.</span></div>
-      </div>
-    </div>
-    <div class="est">
-      <span class="cuando"><span class="es">5–6 semanas</span><span class="en">5–6 weeks</span></span>
-      <div class="caja">
-        <span class="k"><span class="es">Paso 3</span><span class="en">Step 3</span></span>
-        <h3><span class="es">Formación por rol</span><span class="en">Training by role</span></h3>
-        <p><span class="es">Sacar partido, con seguridad, a las herramientas elegidas: sesiones por herramienta y por puesto, del autoguiado a la oficina de dudas. Y acompañamiento completo en todo lo del paso 2: configuración, acuerdos con el proveedor y puesta en marcha.</span><span class="en">Getting the most out of the chosen tools, safely: sessions by tool and by role, from self-guided to help desk. And full support through everything in step 2: configuration, provider agreements and rollout.</span></p>
-        <div class="lleva"><span class="es">Te llevas: un equipo que la usa dentro de límites.</span><span class="en">You keep: a team that uses it within limits.</span></div>
-      </div>
-    </div>
-    <div class="est">
-      <span class="cuando"><span class="es">4–8 semanas → continuo</span><span class="en">4–8 weeks → ongoing</span></span>
-      <div class="caja">
-        <span class="k"><span class="es">Paso 4</span><span class="en">Step 4</span></span>
-        <h3><span class="es">Desarrollo a medida</span><span class="en">Custom development</span></h3>
-        <p><span class="es">Un sistema propio, integrado con lo que ya usas, con controles de entrada y salida.</span><span class="en">A system of your own, integrated with what you already use, with input and output controls.</span></p>
-        <ul class="fases">
-          <li><b><span class="es">Piloto · 4–8 sem</span><span class="en">Pilot · 4–8 wks</span></b><span><span class="es">Datos reales: limpieza y contexto, con criterio de parada acordado.</span><span class="en">Real data: cleaning and context, with an agreed stop criterion.</span></span></li>
-          <li><b><span class="es">Producción · 2–4 meses</span><span class="en">Production · 2–4 months</span></b><span><span class="es">Controles, motor e integración con tu ERP o tu canal.</span><span class="en">Controls, engine and integration with your ERP or channel.</span></span></li>
-          <li><b><span class="es">Mantenimiento · continuo</span><span class="en">Maintenance · ongoing</span></b><span><span class="es">Servicios de IA, alojamiento y evolución.</span><span class="en">AI services, hosting and evolution.</span></span></li>
-        </ul>
-        <div class="lleva"><span class="es">Te llevas: el sistema, y el equipo formado por el camino.</span><span class="en">You keep: the system, and the team trained along the way.</span></div>
-      </div>
-    </div>
-  </div>
-  <p class="descuenta"><span class="es">Cada paso se descuenta del siguiente. Nada de lo que pagas se pierde.</span><span class="en">Each step is discounted from the next. Nothing you pay is lost.</span></p>
-</section>
-
 <!-- ================= CONTACTO ================= -->
 <section id="contacto">
   <h2><span class="k"><span class="es">Contacto</span><span class="en">Contact</span></span>
     <span class="es">Escríbeme</span><span class="en">Get in touch</span></h2>
+  <p class="disp"><span class="es">Disponibilidad inmediata · Sevilla o remoto · español e inglés (C1)</span><span class="en">Available now · Seville or remote · Spanish and English (C1)</span></p>
   <p><a class="cta" href="mailto:danielmartin@epifaneia.dev">danielmartin@epifaneia.dev</a> <a class="cta2" href="https://www.linkedin.com/in/epifaneia">LinkedIn</a> <a class="cta2" href="https://github.com/epifaneia">GitHub</a> <span class="es"><a class="cta2" href="cv/Daniel_Martin_AI_Engineer_ES.pdf">CV</a></span><span class="en"><a class="cta2" href="cv/Daniel_Martin_AI_Engineer_EN.pdf">CV</a></span></p>
 </section>
 
@@ -512,11 +475,10 @@ footer .sutil a{color:#8a8f96}
 
 <footer>
 <div class="wrap">
-  <div><span class="es">Epifaneia · Daniel Martín · Sin cookies, sin analítica, sin nada que salga de tu navegador.</span><span class="en">Epifaneia · Daniel Martín · No cookies, no analytics, nothing leaves your browser.</span></div>
+  <div><span class="es">Daniel Martín · epifaneia · Sin cookies, sin analítica, sin nada que salga de tu navegador.</span><span class="en">Daniel Martín · epifaneia · No cookies, no analytics, nothing leaves your browser.</span></div>
   <div class="sutil">
-    <!-- ENLACE SUTIL: app con IA. URL pendiente. -->
-    <span class="es">Fuera del núcleo, una mente que diseña. <a href="#">Un juego que se juega con IA</a>.</span>
-    <span class="en">Outside the core, a mind that designs. <a href="#">A game played with AI</a>.</span>
+    <span class="es">Fuera del núcleo, una mente que diseña. <a href="https://epifaneia.dev/nogum/">Un juego que se juega con IA</a>.</span>
+    <span class="en">Outside the core, a mind that designs. <a href="https://epifaneia.dev/nogum/">A game played with AI</a>.</span>
   </div>
 </div>
 </footer>
@@ -524,7 +486,7 @@ footer .sutil a{color:#8a8f96}
 <script>
 (function(){
   var b=document.body, btn=document.getElementById('lang');
-  function set(l){b.className=l;document.documentElement.lang=l;btn.querySelectorAll('span').forEach(function(s){s.classList.toggle('on',s.dataset.l===l);});try{localStorage.setItem('lang',l);}catch(e){}}
+  function set(l){b.className=l;document.documentElement.lang=l;btn.querySelectorAll('span').forEach(function(s){s.classList.toggle('on',s.dataset.l===l);});btn.setAttribute('aria-label',l==='es'?'Cambiar a inglés':'Switch to Spanish');try{localStorage.setItem('lang',l);}catch(e){}}
   var saved=null;try{saved=localStorage.getItem('lang');}catch(e){}
   set(saved||(navigator.language&&navigator.language.slice(0,2)==='es'?'es':'en'));
   btn.addEventListener('click',function(){set(b.className==='es'?'en':'es');});

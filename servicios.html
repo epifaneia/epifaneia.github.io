@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Daniel Martín · Cómo trabajo con empresas</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+:root{
+  /* Paleta P1 · petróleo sobre papel. Todos los textos pasan AA (4,5:1) sobre --bg y --oat. */
+  --bg:#F7F5F0; --oat:#EFEBE3; --tinta:#1F2328; --suave:#5B6470; --linea:#D8D3C8;
+  --petroleo:#0F5C63; --petroleo-bg:#DCEBEC; --petroleo-oscuro:#0B4A50;
+  --verde:#0B6E4F; --verde-bg:#DDEFE6; --ambar:#8F5A00; --ambar-bg:#F6E7C4;
+  --bermellon:#B23A1D; --bermellon-bg:#F8E3DC;
+  --sans:"Inter","Segoe UI Variable","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+  --mono:"JetBrains Mono","Cascadia Code",Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tinta);font:17px/1.65 var(--sans)}
+a{color:var(--petroleo);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:0 28px}
+body.es .en{display:none!important}
+body.en .es{display:none!important}
+/* cabecera */
+header{position:sticky;top:0;background:rgba(247,245,240,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea);z-index:10}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--petroleo);font-size:.92rem}
+.logo b{font-weight:300;color:var(--petroleo)}
+nav a{color:var(--suave);font-size:.9rem;margin-left:20px}
+nav a:hover{color:var(--petroleo);text-decoration:none}
+.lang{margin-left:22px;font:600 .76rem var(--mono);border:1px solid var(--linea);border-radius:999px;padding:4px 11px;cursor:pointer;color:var(--suave);background:var(--bg)}
+.lang span.on{color:var(--petroleo)}
+/* hero */
+.hero-bg{background:linear-gradient(180deg,var(--oat) 0%,var(--bg) 70%)}
+.hero{padding:96px 0 72px;display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:2.9rem;line-height:1.1;margin:0 0 16px;letter-spacing:-.02em;font-weight:600;color:var(--petroleo)}
+.hero .quien{font:500 .74rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--petroleo);margin:0 0 12px}
+.hero .claim{font-size:1.16rem;line-height:1.5;color:var(--tinta);margin:0 0 22px;max-width:600px}
+.hero .frases{font:.92rem/1.75 var(--mono);color:var(--suave);margin:0 0 30px}
+.hero .frases span{display:block}
+.foto{aspect-ratio:1/1;border-radius:6px;background:var(--oat);border:1px solid var(--linea);display:flex;align-items:center;justify-content:center;color:var(--suave);font:.8rem var(--mono);text-align:center;overflow:hidden}
+.foto img{width:100%;height:100%;object-fit:cover}
+.cta{display:inline-block;background:var(--petroleo);color:#fff;font-weight:600;padding:11px 20px;border-radius:4px}
+.cta:hover{text-decoration:none;background:var(--petroleo-oscuro)}
+.cta2{display:inline-block;color:var(--petroleo);border:1px solid var(--petroleo);background:var(--bg);padding:11px 20px;border-radius:4px;margin-left:10px}
+.cta2:hover{text-decoration:none;background:var(--petroleo-bg)}
+/* secciones */
+section{padding:72px 0}
+section+section{border-top:1px solid var(--linea)}
+h2{font-size:1.75rem;margin:0 0 6px;letter-spacing:-.015em;color:var(--tinta);font-weight:600}
+h2 .k{display:block;font:500 .7rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--petroleo);margin-bottom:10px}
+.lede{color:var(--suave);font-size:1.08rem;margin:0 0 30px;max-width:740px}
+h3{font-size:1.08rem;margin:0 0 8px;color:var(--tinta)}
+p{margin:0 0 14px}
+ul{margin:0 0 14px;padding-left:20px}
+li{margin-bottom:6px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--oat);border-radius:6px;padding:22px 24px;border:1px solid var(--linea)}
+.card.b{background:var(--petroleo-bg)} .card.s{background:var(--verde-bg)} .card.o{background:var(--ambar-bg)}
+.card .cab{display:block;font:500 .7rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--petroleo);padding:8px 12px;border-radius:4px;margin:-8px -10px 16px;text-align:center}
+.card.o .cab{background:var(--ambar)} .card.s .cab{background:var(--verde)} .card.b .cab{background:var(--petroleo)}
+.card p{font-size:.95rem}
+.card ul{font-size:.92rem;padding-left:18px}
+.card .l{margin-top:14px;font-size:.92rem;font-weight:600}
+.pill{display:inline-block;font:600 .64rem var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:999px;color:#fff;vertical-align:middle;margin-left:6px}
+.pill.t{background:var(--ambar)} .pill.n{background:var(--petroleo)}
+/* pasos */
+.pasos{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:26px 0 18px}
+.paso{border-radius:4px;padding:16px 14px;min-height:170px;background:var(--verde-bg);border-left:4px solid var(--verde)}
+.paso.llm{background:var(--ambar-bg);border-left-color:var(--ambar)}
+.paso b{display:block;font:500 .66rem/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--verde);margin-bottom:8px}
+.paso.llm b{color:var(--ambar)}
+.paso span{display:block;font-size:.88rem;line-height:1.45}
+.leyenda{display:flex;gap:18px;flex-wrap:wrap;font-size:.82rem;color:var(--suave)}
+.leyenda i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+/* pilares de regulación */
+.pilares{display:grid;gap:14px}
+.pilar{display:grid;grid-template-columns:64px 1fr;border:1px solid var(--linea);border-radius:4px;overflow:hidden;background:var(--bg)}
+.pilar .n{display:flex;justify-content:center;padding-top:18px;color:#fff;font:600 1.5rem var(--mono)}
+.pilar.p1 .n{background:var(--petroleo)} .pilar.p2 .n{background:var(--verde)} .pilar.p3 .n{background:var(--ambar)}
+.pilar .c{padding:16px 22px 14px}
+.pilar h3{margin:0 0 8px}
+.pilar p{margin:0 0 10px;font-size:.98rem;max-width:800px}
+.pilar .iso{font:500 .68rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--suave);margin-top:6px}
+.pilar .nota{color:var(--suave);font-size:.88rem}
+.pilar ul{margin:4px 0 10px;padding-left:18px;font-size:.93rem;max-width:800px}
+.pilar li{margin-bottom:4px}
+/* pasos sobre un raíl (solo el pilar 2); los puntos, un tono por debajo de la banda, todos iguales y AA sobre blanco */
+.pilar.p1{--dot:#2F7379;--rail:var(--petroleo-bg)}
+.pilar.p2{--dot:#237A5B;--rail:var(--verde-bg)}
+.pilar.p3{--dot:#96621A;--rail:var(--ambar-bg)}
+.steps{margin:14px 0 4px 10px;padding-left:30px;border-left:2px solid var(--rail);max-width:800px}
+.st{position:relative;margin:0 0 16px}
+.st::before{content:attr(data-n);position:absolute;left:-44px;top:0;width:26px;height:26px;border-radius:50%;background:var(--dot);color:#fff;font:600 .66rem var(--mono);display:flex;align-items:center;justify-content:center}
+.st h4{margin:0 0 4px;font-size:1rem;font-weight:600;color:var(--tinta);line-height:26px}
+.st h4 small{display:block;line-height:1.3;font-weight:400;color:var(--suave);font-size:.86rem;margin-top:2px}
+.st p{margin:0;font-size:.93rem}
+.st ul{margin:4px 0 0;padding-left:18px;font-size:.93rem}
+.st li{margin-bottom:4px}
+/* cómo empezar: cinco estaciones */
+.camino{display:grid;grid-template-columns:repeat(3,1fr) 1.4fr;gap:12px;position:relative;margin-top:28px}
+.camino::before{content:"";position:absolute;left:0;right:0;top:11px;height:2px;background:var(--linea)}
+.est{position:relative;padding-top:34px;display:flex;flex-direction:column}
+.est .cuando{position:absolute;top:0;left:0;font:600 .62rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--petroleo);padding:4px 10px;border-radius:999px;white-space:nowrap}
+.est .caja{background:var(--bg);border:1px solid var(--linea);border-top:4px solid var(--petroleo);border-radius:4px;padding:14px 16px 12px;flex:1;display:flex;flex-direction:column}
+.est .k{font:500 .64rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}
+.est h3{margin:4px 0 8px;font-size:1.02rem}
+.est p{font-size:.9rem;margin:0 0 10px}
+.est .lleva{font-size:.86rem;color:var(--suave);border-top:1px solid var(--linea);padding-top:8px;margin-top:auto}
+.est .gratis{display:inline-block;font:600 .64rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--verde);padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.est .l{font-size:.86rem;font-weight:600;margin:8px 0 0}
+.fases{list-style:none;padding:0;margin:0 0 10px}
+.fases li{font-size:.86rem;margin-bottom:8px}
+.fases b{display:block;font:600 .62rem var(--mono);letter-spacing:.06em;color:var(--petroleo);text-transform:uppercase;margin-bottom:1px}
+.descuenta{margin:26px 0 0;font-size:1.2rem;font-weight:600;color:var(--petroleo)}
+/* el viaje */
+#viaje p{max-width:760px}
+#viaje .lede{margin-bottom:16px}
+#viaje h3{margin-top:36px}
+#viaje .lema{font-weight:600;color:var(--petroleo);margin:0 0 12px}
+/* repos */
+.repos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.repo{border:1px solid var(--linea);border-radius:6px;padding:20px 22px;background:var(--oat)}
+.repo .k{font:500 .66rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--petroleo);margin-bottom:6px}
+.repo h3{margin-bottom:6px}
+.repo p{font-size:.93rem;color:var(--suave)}
+.repo .l{font-weight:600;font-size:.92rem}
+.cierre{font-size:1.25rem;color:var(--petroleo);font-weight:600;margin:28px 0 0}
+footer{padding:44px 0 64px;border-top:1px solid var(--linea);color:var(--suave);font-size:.9rem}
+footer .sutil{margin-top:22px;font-size:.82rem;color:#8a8f96}
+footer .sutil a{color:#8a8f96}
+@media (max-width:800px){
+  html,body{overflow-x:hidden}
+  header{position:static}
+  header .wrap{height:auto;flex-wrap:wrap;gap:8px 0;padding:10px 20px 12px}
+  nav{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;width:100%}
+  nav a{margin:0;font-size:.82rem}
+  .lang{margin-left:auto}
+  .wrap{padding:0 20px}
+  .hero{grid-template-columns:1fr;padding:36px 0 32px;gap:28px}
+  .hero h1{font-size:2.1rem}
+  .hero .claim{font-size:1.05rem}
+  .hero .quien{font-size:.68rem}
+  .hero .frases{font-size:.84rem}
+  .foto{max-width:220px}
+  .cta,.cta2{display:block;margin:0 0 10px;text-align:center}
+  section{padding:48px 0}
+  h2{font-size:1.45rem}
+  .grid3,.repos,.pasos{grid-template-columns:1fr}
+  .paso{min-height:0}
+  .pilar{grid-template-columns:44px 1fr}
+  .pilar .c{padding:14px 14px 12px}
+  .camino{grid-template-columns:1fr;gap:18px} .camino::before{display:none}
+  .steps{margin-left:4px;padding-left:22px} .st::before{left:-36px;width:22px;height:22px;font-size:.6rem} .st h4{line-height:22px}
+  .pilar .n{font-size:1.1rem;padding-top:15px}
+}
+</style>
+</head>
+<body class="es">
+<header>
+<div class="wrap">
+  <a class="logo" href="index.html" style="display:flex;align-items:center;gap:10px"><img src="logo-icono.png" alt="" style="height:38px;display:block"><img src="logo-wordmark.png" alt="epifaneia" style="height:34px;display:block"></a>
+  <nav>
+    <a href="index.html"><span class="es">Inicio</span><span class="en">Home</span></a>
+    <button class="lang" id="lang" aria-label="Idioma / Language"><span data-l="es">ES</span> · <span data-l="en">EN</span></button>
+  </nav>
+</div>
+</header>
+<main>
+<div class="wrap">
+<!-- ================= CÓMO EMPEZAR ================= -->
+<section id="empezar">
+  <h2><span class="k"><span class="es">Cómo empezar</span><span class="en">How to start</span></span>
+    <span class="es">Cuatro estaciones. Ninguna te obliga a la siguiente.</span><span class="en">Four stations. None commits you to the next.</span></h2>
+  <p class="lede">
+    <span class="es">Se empieza con un estudio sin coste y se para donde quieras. Lo pagado en una estación se descuenta de la siguiente.</span>
+    <span class="en">It starts with a free study and stops wherever you want. What you pay at one station is discounted from the next.</span>
+  </p>
+  <div class="camino">
+    <div class="est">
+      <span class="cuando"><span class="es">1 semana</span><span class="en">1 week</span></span>
+      <div class="caja">
+        <span class="k"><span class="es">Paso 1</span><span class="en">Step 1</span></span>
+        <h3><span class="es">Estudio de viabilidad</span><span class="en">Feasibility study</span><span class="gratis"><span class="es">sin coste</span><span class="en">free</span></span></h3>
+        <p><span class="es">Una reunión para rellenar juntos el formulario, o lo rellenas tú con el enlace de abajo. En una semana, el informe revisado a mano: potencial y retorno, las tres intervenciones que más dan, qué va con herramientas existentes y qué a medida. Y una reunión para discutir los resultados, acordar las tareas y activar el paso 2.</span><span class="en">A meeting to fill in the form together, or you fill it in yourself with the link below. Within a week, the report, reviewed by hand: potential and return, the three interventions that give the most, what runs on existing tools and what needs building. Then a meeting to discuss the results, agree the tasks and activate step 2.</span></p>
+        <p class="l"><a href="index.html#contacto"><span class="es">Empezamos cuando quieras: escríbeme →</span><span class="en">We start whenever you want: write to me →</span></a></p>
+        <p class="l" style="margin-top:4px"><a href="https://github.com/epifaneia/feasibility-study"><span class="es">El proceso, en código →</span><span class="en">The process, in code →</span></a></p>
+        <div class="lleva"><span class="es">Te llevas: el informe y el roadmap.</span><span class="en">You keep: the report and the roadmap.</span></div>
+      </div>
+    </div>
+    <div class="est">
+      <span class="cuando"><span class="es">1–2 semanas</span><span class="en">1–2 weeks</span></span>
+      <div class="caja">
+        <span class="k"><span class="es">Paso 2</span><span class="en">Step 2</span></span>
+        <h3><span class="es">Dictamen de encaje</span><span class="en">Fit assessment</span></h3>
+        <p><span class="es">De las tareas acordadas, las tres que no necesitan una herramienta nueva. Para cada una, la propuesta bajada a tierra: qué herramienta usar, cómo configurarla conforme a normativa, qué acuerdos concretos pedir al proveedor y cómo, y cómo usarla de forma segura.</span><span class="en">From the agreed tasks, the three that need no new tool. For each one, the proposal brought down to earth: which tool to use, how to configure it in line with regulation, which specific agreements to ask the provider for and how, and how to use it safely.</span></p>
+        <p class="l"><a href="index.html#regulacion"><span class="es">Los tres pilares →</span><span class="en">The three pillars →</span></a></p>
+        <div class="lleva"><span class="es">Te llevas: un informe con instrucciones y enlaces para hacerlo tú. Si quieres acompañamiento, es el paso 3.</span><span class="en">You keep: a report with instructions and links to do it yourself. If you want support, that is step 3.</span></div>
+      </div>
+    </div>
+    <div class="est">
+      <span class="cuando"><span class="es">5–6 semanas</span><span class="en">5–6 weeks</span></span>
+      <div class="caja">
+        <span class="k"><span class="es">Paso 3</span><span class="en">Step 3</span></span>
+        <h3><span class="es">Formación por rol</span><span class="en">Training by role</span></h3>
+        <p><span class="es">Sacar partido, con seguridad, a las herramientas elegidas: sesiones por herramienta y por puesto, del autoguiado a la oficina de dudas. Y acompañamiento completo en todo lo del paso 2: configuración, acuerdos con el proveedor y puesta en marcha.</span><span class="en">Getting the most out of the chosen tools, safely: sessions by tool and by role, from self-guided to help desk. And full support through everything in step 2: configuration, provider agreements and rollout.</span></p>
+        <div class="lleva"><span class="es">Te llevas: un equipo que la usa dentro de límites.</span><span class="en">You keep: a team that uses it within limits.</span></div>
+      </div>
+    </div>
+    <div class="est">
+      <span class="cuando"><span class="es">4–8 semanas → continuo</span><span class="en">4–8 weeks → ongoing</span></span>
+      <div class="caja">
+        <span class="k"><span class="es">Paso 4</span><span class="en">Step 4</span></span>
+        <h3><span class="es">Desarrollo a medida</span><span class="en">Custom development</span></h3>
+        <p><span class="es">Un sistema propio, integrado con lo que ya usas, con controles de entrada y salida.</span><span class="en">A system of your own, integrated with what you already use, with input and output controls.</span></p>
+        <ul class="fases">
+          <li><b><span class="es">Piloto · 4–8 sem</span><span class="en">Pilot · 4–8 wks</span></b><span><span class="es">Datos reales: limpieza y contexto, con criterio de parada acordado.</span><span class="en">Real data: cleaning and context, with an agreed stop criterion.</span></span></li>
+          <li><b><span class="es">Producción · 2–4 meses</span><span class="en">Production · 2–4 months</span></b><span><span class="es">Controles, motor e integración con tu ERP o tu canal.</span><span class="en">Controls, engine and integration with your ERP or channel.</span></span></li>
+          <li><b><span class="es">Mantenimiento · continuo</span><span class="en">Maintenance · ongoing</span></b><span><span class="es">Servicios de IA, alojamiento y evolución.</span><span class="en">AI services, hosting and evolution.</span></span></li>
+        </ul>
+        <div class="lleva"><span class="es">Te llevas: el sistema, y el equipo formado por el camino.</span><span class="en">You keep: the system, and the team trained along the way.</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="descuenta"><span class="es">Cada paso se descuenta del siguiente. Nada de lo que pagas se pierde.</span><span class="en">Each step is discounted from the next. Nothing you pay is lost.</span></p>
+</section>
+
+</div>
+</main>
+<footer>
+<div class="wrap">
+  <div><span class="es">Daniel Martín · epifaneia · Sin cookies, sin analítica, sin nada que salga de tu navegador.</span><span class="en">Daniel Martín · epifaneia · No cookies, no analytics, nothing leaves your browser.</span></div>
+  <div class="sutil">
+    <span class="es">Fuera del núcleo, una mente que diseña. <a href="https://epifaneia.dev/nogum/">Un juego que se juega con IA</a>.</span>
+    <span class="en">Outside the core, a mind that designs. <a href="https://epifaneia.dev/nogum/">A game played with AI</a>.</span>
+  </div>
+</div>
+</footer>
+
+<script>
+(function(){
+  var b=document.body, btn=document.getElementById('lang');
+  function set(l){b.className=l;document.documentElement.lang=l;btn.querySelectorAll('span').forEach(function(s){s.classList.toggle('on',s.dataset.l===l);});btn.setAttribute('aria-label',l==='es'?'Cambiar a inglés':'Switch to Spanish');try{localStorage.setItem('lang',l);}catch(e){}}
+  var saved=null;try{saved=localStorage.getItem('lang');}catch(e){}
+  set(saved||(navigator.language&&navigator.language.slice(0,2)==='es'?'es':'en'));
+  btn.addEventListener('click',function(){set(b.className==='es'?'en':'es');});
+})();
+</script>
+</body>
+</html>
