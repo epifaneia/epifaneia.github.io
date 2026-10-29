@@ -96,6 +96,10 @@ li{margin-bottom:6px}
 .pilar h3{margin:0 0 8px}
 .pilar p{margin:0 0 10px;font-size:.98rem;max-width:800px}
 .pilar .iso{font:500 .68rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--suave);margin-top:6px}
+.tray{display:grid;grid-template-columns:max-content 1fr;gap:8px 18px;margin:0 0 26px;max-width:740px}
+.tray dt{font:500 .8rem/1.6 var(--mono);color:var(--suave);font-variant-numeric:tabular-nums}
+.tray dd{margin:0}
+@media (max-width:560px){.tray{grid-template-columns:1fr;gap:2px}.tray dd{margin-bottom:10px}}
 .pilar .nota{color:var(--suave);font-size:.88rem}
 .pilar ul{margin:4px 0 10px;padding-left:18px;font-size:.93rem;max-width:800px}
 .pilar li{margin-bottom:4px}
@@ -309,7 +313,7 @@ footer .sutil a{color:#8a8f96}
         <li><span class="es"><strong>Control de accesos propio, por encima del nativo</strong>: quién puede ejecutar qué proceso y sobre qué datos, con revisión periódica.</span><span class="en"><strong>Custom access control, on top of the native one</strong>: who may run which process on which data, reviewed periodically.</span></li>
         <li><span class="es"><strong>Versionado</strong>: qué modelo, qué prompt y qué guardarraíl respondieron cada día. Sin eso no hay auditoría posible.</span><span class="en"><strong>Versioning</strong>: which model, which prompt and which guardrail answered on each day. Without it there is no audit possible.</span></li>
       </ul>
-      <div class="iso">ISO 9001 · ISO/IEC 42001</div>
+      <div class="iso">ISO/IEC 42001</div>
     </div></div>
     <div class="pilar p2"><div class="n">2</div><div class="c">
       <h3><span class="es">Custodia del dato: dónde vive y quién lo ve</span><span class="en">Data custody: where it lives and who sees it</span></h3>
@@ -344,7 +348,7 @@ footer .sutil a{color:#8a8f96}
         </ul>
       </div>
       </div>
-      <div class="iso">ISO/IEC 27001 · 27017 · 27018 · <span class="es">RGPD</span><span class="en">GDPR</span> · EU AI Act</div>
+      <div class="iso">ISO/IEC 27001 · TISAX · <span class="es">RGPD</span><span class="en">GDPR</span> · EU AI Act</div>
     </div></div>
     <div class="pilar p3"><div class="n">3</div><div class="c">
       <h3><span class="es">Verificación y riesgo: el error tiene límite</span><span class="en">Verification and risk: error has a limit</span></h3>
@@ -356,7 +360,7 @@ footer .sutil a{color:#8a8f96}
         <li><span class="es"><strong>Compromisos concretos con el proveedor</strong>: SLA con cambio de modelo si la tarea se desvía; estabilidad de versiones y preaviso.</span><span class="en"><strong>Concrete commitments with the provider</strong>: an SLA with a model change if the task drifts; version stability and advance notice.</span></li>
         <li><span class="es"><strong>Análisis de riesgos auditado</strong> y medidas explícitas para cuando algo falla: degradar, marcar, parar. Firma humana antes de producción.</span><span class="en"><strong>Audited risk analysis</strong> and explicit measures for when something fails: degrade, flag, stop. Human signature before production.</span></li>
       </ul>
-      <div class="iso">IEC 61508 · IEC 62443 · ISO/IEC 23894</div>
+      <div class="iso">ISO/IEC 23894</div>
     </div></div>
   </div>
   <p class="l" style="margin-top:22px;font-weight:600;font-size:.95rem">
@@ -470,6 +474,15 @@ footer .sutil a{color:#8a8f96}
     <span class="es">Y funcionaba. La idea terminó. Comienza el trabajo. He semiautomatizado la creación de herramientas de automatización.</span>
     <span class="en">And it worked. The idea is finished. The work begins. I have semi-automated the making of automation tools.</span>
   </p>
+  <h3><span class="es">Trayectoria</span><span class="en">Career</span></h3>
+  <dl class="tray">
+    <dt>2026 · <span class="es">jun – sep</span><span class="en">Jun – Sep</span></dt><dd><span class="es">Encargos recurrentes de conversión a ReqIF para un ingeniero senior de un proveedor de automoción Tier 1, con reqif-extractor.</span><span class="en">Recurring ReqIF conversion engagements for a senior engineer at a Tier 1 automotive supplier, with reqif-extractor.</span></dd>
+    <dt>2024 – <span class="es">hoy</span><span class="en">now</span></dt><dd><span class="es">Gestor bilingüe en Foundever (campaña de Airbnb), en paralelo a Epifaneia.</span><span class="en">Bilingual account specialist at Foundever (Airbnb programme), in parallel with Epifaneia.</span></dd>
+    <dt>2024 · <span class="es">mar – dic</span><span class="en">Mar – Dec</span></dt><dd><span class="es">Konecta: empecé como teleoperador de ventas y entré en el proyecto de automatización del sistema de KPIs, en Python.</span><span class="en">Konecta: started as a telesales agent and joined the project automating the KPI system, in Python.</span></dd>
+    <dt>2023 – 2024</dt><dd><span class="es">Diploma en desarrollo full stack, Code Institute, con crédito universitario.</span><span class="en">Full stack development diploma, Code Institute, university credit-rated.</span></dd>
+    <dt>2017 – 2023</dt><dd><span class="es">Análisis de riesgo, calidad y formación en Irlanda y España; QA de software y líder de equipo en Media Interactiva.</span><span class="en">Risk analysis, quality and training in Ireland and Spain; software QA and team lead at Media Interactiva.</span></dd>
+    <dt><span class="es">Antes</span><span class="en">Before</span></dt><dd><span class="es">Física y Filosofía en la Universidad de Sevilla.</span><span class="en">Physics and Philosophy at the University of Seville.</span></dd>
+  </dl>
   <p class="l" style="font-weight:600;font-size:.95rem"><span class="es"><a href="cv/Daniel_Martin_AI_Engineer_ES.pdf">CV en PDF →</a> · <a href="cv/Daniel_Martin_AI_Engineer_EN.pdf">in English →</a> · <a href="https://github.com/epifaneia/cv">el código que lo genera →</a></span><span class="en"><a href="cv/Daniel_Martin_AI_Engineer_EN.pdf">CV as PDF →</a> · <a href="cv/Daniel_Martin_AI_Engineer_ES.pdf">en español →</a> · <a href="https://github.com/epifaneia/cv">the code that builds it →</a></span></p>
   <p>
     <span class="es">Cada vuelta entrega algo usable. Cada día mejora. Hoy ya se puede usar.</span>
