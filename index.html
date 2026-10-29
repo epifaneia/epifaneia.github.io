@@ -12,7 +12,7 @@
 <meta property="og:locale:alternate" content="en_GB">
 <link rel="canonical" href="https://epifaneia.dev/">
 <meta property="og:image" content="https://epifaneia.dev/og.png">
-<meta property="og:url" content="https://epifaneia.dev">
+<meta property="og:url" content="https://epifaneia.dev/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="description" content="Daniel Martín, AI Engineer en Sevilla: aplicaciones de IA que se pueden auditar, con código público y cifras medidas. / AI Engineer in Seville: auditable AI applications, public code, measured numbers.">
@@ -46,7 +46,7 @@ nav a:hover{color:var(--petroleo);text-decoration:none}
 .lang span.on{color:var(--petroleo)}
 /* hero */
 .hero-bg{background:linear-gradient(180deg,var(--oat) 0%,var(--bg) 70%)}
-.hero{padding:96px 0 72px;display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:center}
+.hero{padding:88px 0 40px;display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:center}
 .hero h1{font-size:2.9rem;line-height:1.1;margin:0 0 16px;letter-spacing:-.02em;font-weight:600;color:var(--petroleo)}
 .hero .quien{font:500 .74rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--petroleo);margin:0 0 12px}
 .hero .claim{font-size:1.16rem;line-height:1.5;color:var(--tinta);margin:0 0 22px;max-width:600px}
@@ -95,7 +95,7 @@ li{margin-bottom:6px}
 .pilar .c{padding:16px 22px 14px}
 .pilar h3{margin:0 0 8px}
 .pilar p{margin:0 0 10px;font-size:.98rem;max-width:800px}
-.pilar .iso{font:500 .68rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--suave);margin-top:6px}
+.pilar .iso,.card .iso{font:500 .68rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--suave);margin-top:6px}
 .tray{display:grid;grid-template-columns:max-content 1fr;gap:8px 18px;margin:0 0 26px;max-width:740px}
 .tray dt{font:500 .8rem/1.6 var(--mono);color:var(--suave);font-variant-numeric:tabular-nums}
 .tray dd{margin:0}
@@ -147,6 +147,14 @@ li{margin-bottom:6px}
 .grupo:first-of-type{margin-top:6px}
 .repo.dest{background:var(--petroleo-bg);border-color:var(--petroleo)}
 .disp{font:500 .8rem var(--mono);color:var(--verde);margin:0 0 26px}
+.pruebas{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:0 0 56px}
+.prueba{display:block;background:var(--bg);border:1px solid var(--linea);border-top:3px solid var(--petroleo);border-radius:6px;padding:16px 18px;color:var(--tinta)}
+.prueba:hover{text-decoration:none;border-color:var(--petroleo)}
+.prueba b{display:block;font:600 1.7rem/1.1 var(--mono);color:var(--petroleo);margin-bottom:6px;font-variant-numeric:tabular-nums}
+.prueba span{font-size:.92rem;line-height:1.45;color:var(--suave)}
+.prueba u{text-decoration:none;color:var(--petroleo);font-weight:600;white-space:nowrap}
+.repos.uno{grid-template-columns:1fr}
+.herr{font-size:.92rem;color:var(--suave);max-width:760px}
 .cierre{font-size:1.25rem;color:var(--petroleo);font-weight:600;margin:28px 0 0}
 footer{padding:44px 0 64px;border-top:1px solid var(--linea);color:var(--suave);font-size:.9rem}
 footer .sutil{margin-top:22px;font-size:.82rem;color:#8a8f96}
@@ -168,7 +176,8 @@ footer .sutil a{color:#8a8f96}
   .cta,.cta2{display:block;margin:0 0 10px;text-align:center}
   section{padding:48px 0}
   h2{font-size:1.45rem}
-  .grid3,.repos,.pasos{grid-template-columns:1fr}
+  .grid3,.repos,.pasos,.pruebas{grid-template-columns:1fr}
+  .pruebas{padding-bottom:36px}
   .paso{min-height:0}
   .pilar{grid-template-columns:44px 1fr}
   .pilar .c{padding:14px 14px 12px}
@@ -184,10 +193,9 @@ footer .sutil a{color:#8a8f96}
 <div class="wrap">
   <a class="logo" href="#top" style="display:flex;align-items:center;gap:10px"><img src="logo-icono.png" alt="epifaneia · inicio" style="height:38px;display:block"></a>
   <nav>
-    <a href="#niveles"><span class="es">Tres niveles</span><span class="en">Three levels</span></a>
-    <a href="#pasos"><span class="es">Cinco pasos</span><span class="en">Five steps</span></a>
-    <a href="#regulacion"><span class="es">Regulación</span><span class="en">Regulation</span></a>
     <a href="#repos"><span class="es">Código</span><span class="en">Code</span></a>
+    <a href="#pasos"><span class="es">Método</span><span class="en">Method</span></a>
+    <a href="#regulacion"><span class="es">Regulación</span><span class="en">Regulation</span></a>
     <a href="#viaje"><span class="es">Quién soy</span><span class="en">About me</span></a>
     <a href="cv/Daniel_Martin_AI_Engineer_ES.pdf" class="es">CV</a><a href="cv/Daniel_Martin_AI_Engineer_EN.pdf" class="en">CV</a>
     <a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
@@ -215,166 +223,28 @@ footer .sutil a{color:#8a8f96}
     </p>
     <p class="disp"><span class="es">Disponibilidad inmediata · Sevilla o remoto</span><span class="en">Available now · Seville or remote</span></p>
     <a class="cta es" href="cv/Daniel_Martin_AI_Engineer_ES.pdf">CV en PDF</a><a class="cta en" href="cv/Daniel_Martin_AI_Engineer_EN.pdf">CV as PDF</a>
-    <a class="cta2" href="#repos"><span class="es">Ver el código</span><span class="en">See the code</span></a>
+    <a class="cta2" href="#repos"><span class="es">Ver las pruebas</span><span class="en">See the proof</span></a>
   </div>
   <div class="foto" id="foto">
     <img src="foto.jpg" alt="Daniel Martín">
   </div>
+</div>
+<div class="pruebas">
+  <a class="prueba" href="https://github.com/epifaneia/ctsm"><b>9 / 9</b><span class="es">requisitos de cliente auditados contra un manual de 1.136 páginas, sin un solo falso «cumple». <u>CTSM →</u></span><span class="en">customer requirements audited against a 1,136-page manual, with not one false "compliant". <u>CTSM →</u></span></a>
+  <a class="prueba" href="https://mildew-8ygp4es5aitvvhp8buud32.streamlit.app"><b>879 / 879</b><span class="es">en test, después de encontrar y cerrar dos filtraciones en mi propio proyecto de 2024. <u>Pruébalo →</u></span><span class="en">on test, after finding and closing two leaks in my own 2024 project. <u>Try it →</u></span></a>
+  <a class="prueba" href="https://github.com/epifaneia/reqif-extractor"><b>167 / 170</b><span class="es">identificadores inventados por el modelo cuando el código no los comprueba. Con la comprobación, ninguno llega al fichero. <u>reqif-extractor →</u></span><span class="en">identifiers invented by the model when code does not check them. With the check, none reaches the file. <u>reqif-extractor →</u></span></a>
 </div>
 </div>
 </div>
 
 <div class="wrap">
 
-<!-- ================= TRES NIVELES ================= -->
-<section id="niveles">
-  <h2><span class="k"><span class="es">Tres niveles</span><span class="en">Three levels</span></span>
-    <span class="es">Código, IA y regulación</span><span class="en">Code, AI and regulation</span></h2>
-  <p class="lede">
-    <span class="es">La IA no sustituye a la ingeniería. La necesita. Tres capas, cada una con su prueba.</span>
-    <span class="en">AI does not replace engineering. It needs it. Three layers, each with its proof.</span>
-  </p>
-  <div class="grid3">
-    <div class="card b">
-      <span class="cab"><span class="es">Código</span><span class="en">Code</span></span>
-      <h3><span class="es">La habilidad de fondo: dar forma a las soluciones</span><span class="en">The underlying skill: giving solutions their shape</span></h3>
-      <p><span class="es">Una idea no es una solución hasta que tiene pasos, contratos entre pasos y pruebas. Eso es lo que sé hacer.</span><span class="en">An idea is not a solution until it has steps, contracts between steps and tests. That is what I know how to do.</span></p>
-      <ul>
-        <li>Python · <span class="es">pipelines por etapas, salida estructurada, tests</span><span class="en">staged pipelines, structured output, tests</span></li>
-        <li><span class="es">Metodología agile: cada vuelta entrega algo usable</span><span class="en">Agile: every iteration ships something usable</span></li>
-        <li><span class="es">Análisis de datos: pandas, SQL, SQLite, embeddings</span><span class="en">Data analysis: pandas, SQL, SQLite, embeddings</span></li>
-        <li><span class="es">Documentos: PDF, Excel, audio, XML</span><span class="en">Documents: PDF, spreadsheets, audio, XML</span></li>
-        <li><span class="es">Modelos en local y en nube con el mismo contrato</span><span class="en">Local and cloud models under the same contract</span></li>
-        <li>FastAPI · Django · TypeScript · Docker · Git</li>
-      </ul>
-      <p class="l"><a href="https://github.com/epifaneia/ordena"><span class="es">Integrado con un ERP: Ordena →</span><span class="en">Wired into an ERP: Ordena →</span></a></p>
-    </div>
-    <div class="card s">
-      <span class="cab">IA</span>
-      <h3><span class="es">Los cinco pasos de toda app</span><span class="en">The five steps of every app</span></h3>
-      <p><span class="es">Cualquier aplicación con IA tiene cinco pasos: limpieza, contexto, guardarraíl de entrada, proceso y guardarraíl de salida. Solo uno invoca un modelo. Los otros cuatro son código.</span><span class="en">Every AI application has five steps: cleaning, context, input guardrail, process and output guardrail. Only one invokes a model. The other four are code.</span></p>
-      <p><span class="es">El kit reúne las piezas de cada paso, sacadas de pipelines que han corrido sobre datos reales. Un pipeline nuevo empieza donde terminó el anterior y dedica el tiempo a lo único que siempre es nuevo: el guardarraíl de salida.</span><span class="en">The kit gathers the parts of each step, taken from pipelines that have run on real data. A new pipeline starts where the last one ended and spends its time on the only thing that is always new: the output guardrail.</span></p>
-      <p class="l"><a href="https://github.com/epifaneia/toolkit"><span class="es">El kit →</span><span class="en">The kit →</span></a></p>
-    </div>
-    <div class="card o">
-      <span class="cab"><span class="es">Regulación</span><span class="en">Regulation</span></span>
-      <h3><span class="es">Diseñado para auditarse</span><span class="en">Built to be audited</span></h3>
-      <p><span class="es">He trabajado en automoción, donde un requisito mal leído acaba en producción. Cada repositorio lleva la custodia en el código: quién lo ejecutó, qué salió de la máquina y quién firma.</span><span class="en">I have worked in automotive, where a misread requirement ends up in production. Every repository carries custody in code: who ran it, what left the machine and who signs.</span></p>
-      <ul>
-        <li>Polarion · ReqIF <span class="pill t"><span class="es">en uso real</span><span class="en">in real use</span></span></li>
-        <li><span class="es">RGPD · local en CTSM y Ordena; si algo va a la nube, se declara y se registra</span><span class="en">GDPR · local in CTSM and Ordena; anything sent to the cloud is declared and logged</span> <span class="pill t"><span class="es">en el código</span><span class="en">in the code</span></span></li>
-        <li>EU AI Act · ISO/IEC 42001 · 27001 · 23894 <span class="pill n"><span class="es">como referencia</span><span class="en">as reference</span></span></li>
-      </ul>
-      <p class="l"><a href="#regulacion"><span class="es">Los tres pilares →</span><span class="en">The three pillars →</span></a></p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CINCO PASOS ================= -->
-<section id="pasos">
-  <h2><span class="k"><span class="es">Filosofía de diseño</span><span class="en">Design philosophy</span></span>
-    <span class="es">Cualquier app con IA tiene cinco pasos</span><span class="en">Every AI app has five steps</span></h2>
-  <p class="lede">
-    <span class="es">A veces uno está vacío, a veces dos van pegados, pero están. Antes de construir, la pregunta es siempre la misma: ¿en cuál de los cinco hay una mejora enorme esperando? Casi nunca es en el cuarto.</span>
-    <span class="en">Sometimes one is empty, sometimes two are glued together, but they are always there. Before building, the question is always the same: which of the five holds the big improvement? Almost never the fourth.</span>
-  </p>
-  <div class="pasos">
-    <div class="paso"><b>1 · <span class="es">Limpieza</span><span class="en">Cleaning</span></b><span class="es">Lo que llega (PDF, audio, correo, Excel) se convierte en texto íntegro con metadatos: página, minuto, hablante, fecha.</span><span class="en">Whatever arrives (PDF, audio, email, spreadsheets) becomes complete text with metadata: page, minute, speaker, date.</span></div>
-    <div class="paso"><b>2 · <span class="es">Contexto</span><span class="en">Context</span></b><span class="es">El modelo recibe lo justo, identificado, y no se paga dos veces por lo mismo.</span><span class="en">The model gets exactly what it needs, addressable by id, and nothing is paid for twice.</span></div>
-    <div class="paso"><b>3 · <span class="es">Guardarraíl de entrada</span><span class="en">Input guardrail</span></b><span class="es">Lo que el modelo puede decir se acota antes de que hable: esquema, enumeraciones cerradas sacadas de la fuente, presupuesto.</span><span class="en">What the model may say is bounded before it speaks: schema, closed enums taken from the source, budget.</span></div>
-    <div class="paso llm"><b>4 · <span class="es">Proceso</span><span class="en">Process</span></b><span class="es">La llamada. Una, acotada. Cadenas, bucles o agentes solo cuando lo anterior no llega, y diciendo por qué.</span><span class="en">The call. One, bounded. Chains, loops or agents only when that does not suffice, and saying why.</span></div>
-    <div class="paso"><b>5 · <span class="es">Guardarraíl de salida</span><span class="en">Output guardrail</span></b><span class="es">Lo que dijo el modelo se verifica por código contra la fuente. Ante la duda, se degrada y se marca. Nunca se corrige.</span><span class="en">What the model said is verified in code against the source. When in doubt, degrade and flag. Never patch.</span></div>
-  </div>
-  <div class="leyenda">
-    <span><i style="background:var(--verde)"></i><span class="es">determinista · el código garantiza</span><span class="en">deterministic · code guarantees</span></span>
-    <span><i style="background:var(--ambar)"></i><span class="es">el modelo interpreta</span><span class="en">the model interprets</span></span>
-  </div>
-  <p style="margin-top:22px">
-    <span class="es"><strong>Lo medido.</strong> Con los pasos 1, 2, 3 y 5 bien hechos, lo que queda en medio cabe en una llamada simple. En CTSM, un modelo local de 14B en una GPU de 6 GB acierta 9 de 9 requisitos contra un ground truth hecho a mano, sin un solo falso «cumple». El paso 5 caza lo que un umbral de parecido deja pasar: el modelo citó «4 to 16 MHz» y el manual dice «3 to 25». En reqif-extractor, sin el paso 5, el modelo inventaba 167 de 170 identificadores.</span>
-    <span class="en"><strong>Measured.</strong> With steps 1, 2, 3 and 5 done properly, what is left in the middle fits in one simple call. In CTSM, a local 14B model on a 6 GB GPU gets 9 of 9 requirements right against a hand-built ground truth, with not a single false "compliant". Step 5 catches what a similarity threshold lets through: the model quoted "4 to 16 MHz" and the manual says "3 to 25". In reqif-extractor, without step 5, the model invented 167 of 170 identifiers.</span>
-  </p>
-</section>
-
-<!-- ================= REGULACIÓN ================= -->
-<section id="regulacion">
-  <h2><span class="k"><span class="es">Regulación</span><span class="en">Regulation</span></span>
-    <span class="es">Los tres pilares</span><span class="en">The three pillars</span></h2>
-  <p class="lede">
-    <span class="es">Lo que la norma pide de un sistema con IA es lo que siempre pidió de un sistema crítico: saber quién hizo qué, que el dato no se escape y que el error tenga límite. La mayor parte no es código: son acuerdos, procesos y formación. El código es solo la parte que se puede comprobar. Tres pilares, con todo lo que hay debajo.</span>
-    <span class="en">What regulation asks of a system with AI is what it always asked of a critical system: know who did what, keep the data from escaping and put a limit on error. Most of it is not code: it is agreements, processes and training. Code is only the part that can be checked. Three pillars, with everything underneath.</span>
-  </p>
-  <div class="pilares">
-    <div class="pilar p1"><div class="n">1</div><div class="c">
-      <h3><span class="es">Trazabilidad: quién hizo qué</span><span class="en">Traceability: who did what</span></h3>
-      <p><span class="es">Registro de cada paso y de cada llamada al modelo, con quién lo ejecutó, qué dato entró y qué salió. Y nadie pasa a producción sin firma humana.</span><span class="en">A record of every step and every model call, with who ran it, what data went in and what came out. And nobody reaches production without a human signature.</span></p>
-      <ul>
-        <li><span class="es"><strong>Registro obligatorio</strong>: usuario, fecha, entrada, salida, versión del modelo y del prompt. Inmutable y exportable para auditoría.</span><span class="en"><strong>Mandatory logging</strong>: user, date, input, output, model and prompt version. Immutable and exportable for audit.</span></li>
-        <li><span class="es"><strong>Firma humana</strong> (<em>human in the loop</em>) antes de que cualquier salida llegue a un cliente, a un fichero maestro o a producción. Quién firma, queda registrado.</span><span class="en"><strong>Human signature</strong> (<em>human in the loop</em>) before any output reaches a customer, a master file or production. Who signs is recorded.</span></li>
-        <li><span class="es"><strong>Control de accesos propio, por encima del nativo</strong>: quién puede ejecutar qué proceso y sobre qué datos, con revisión periódica.</span><span class="en"><strong>Custom access control, on top of the native one</strong>: who may run which process on which data, reviewed periodically.</span></li>
-        <li><span class="es"><strong>Versionado</strong>: qué modelo, qué prompt y qué guardarraíl respondieron cada día. Sin eso no hay auditoría posible.</span><span class="en"><strong>Versioning</strong>: which model, which prompt and which guardrail answered on each day. Without it there is no audit possible.</span></li>
-      </ul>
-      <div class="iso">ISO/IEC 42001</div>
-    </div></div>
-    <div class="pilar p2"><div class="n">2</div><div class="c">
-      <h3><span class="es">Custodia del dato: dónde vive y quién lo ve</span><span class="en">Data custody: where it lives and who sees it</span></h3>
-      <p><span class="es">Toda fuga es grave: entre compañeros, hacia el proveedor, por la nube. La lista es larga y hay que recorrerla entera. Cuatro pasos, en este orden.</span><span class="en">Every leak is serious: between colleagues, towards the provider, through the cloud. The list is long and has to be walked to the end. Four steps, in this order.</span></p>
-      <div class="steps">
-      <div class="st s1" data-n="2.1"><h4><span class="es">Negociar con el proveedor</span><span class="en">Negotiate with the provider</span><small><span class="es">Lo que se firma antes de mandar el primer dato.</span><span class="en">What gets signed before the first byte leaves.</span></small></h4>
-        <ul>
-          <li><span class="es">Cifrado en tránsito y en reposo. <span class="nota">Con un modelo en nube el proveedor procesa el texto en claro; el cifrado de punta a punta solo existe en local. Lo que se negocia es lo demás.</span></span><span class="en">Encryption in transit and at rest. <span class="nota">With a cloud model the provider processes the text in the clear; end-to-end encryption only exists on premises. What gets negotiated is everything else.</span></span></li>
-          <li><span class="es">Política de retención cero (<em>zero data retention</em>), por contrato.</span><span class="en">Zero data retention policy, in the contract.</span></li>
-          <li><span class="es">Región de la nube fijada por normativa: Europa occidental.</span><span class="en">Cloud region fixed by regulation: Western Europe.</span></li>
-          <li><span class="es">Seguimiento de los términos y condiciones: algunos modelos están fuera de cualquier acuerdo de retención cero. Se tiene presente siempre, no una vez.</span><span class="en">Tracking of terms and conditions: some models sit outside any possible zero-retention agreement. Kept in mind always, not once.</span></li>
-          <li><span class="es">Estabilidad de versiones y preaviso ante cambios o retiradas de modelo.</span><span class="en">Version stability and advance notice of model changes or retirements.</span></li>
-        </ul>
-      </div>
-      <div class="st s2" data-n="2.2"><h4><span class="es">Configurar las herramientas</span><span class="en">Configure the tools</span><small><span class="es">Lo que la máquina impide por sí sola.</span><span class="en">What the machine prevents on its own.</span></small></h4>
-        <ul>
-          <li><span class="es">Permisos por nivel de acceso: nativos cuando los hay (Copilot hereda los de Microsoft 365), propios cuando no.</span><span class="en">Permissions by access level: native where they exist (Copilot inherits Microsoft 365 permissions), custom where they do not.</span></li>
-          <li><span class="es">Anonimización de datos personales antes de que lleguen al modelo (p. ej. Presidio, de Microsoft, código abierto).</span><span class="en">Anonymisation of personal data before it reaches the model (e.g. Presidio, Microsoft's open-source library).</span></li>
-          <li><span class="es">Procesos aislados: cada uno ve solo lo suyo. Verificación en dos pasos.</span><span class="en">Isolated processes: each one sees only its own. Two-factor authentication.</span></li>
-        </ul>
-      </div>
-      <div class="st s3" data-n="2.3"><h4><span class="es">Configurar los procesos</span><span class="en">Configure the processes</span><small><span class="es">Lo que la empresa decide por escrito.</span><span class="en">What the company decides in writing.</span></small></h4>
-        <ul>
-          <li><span class="es">Firma humana y control de accesos más allá del nativo.</span><span class="en">Human signature and access control beyond the native one.</span></li>
-          <li><span class="es">En local obligatorio para proyectos críticos: sector público y usos de alto riesgo según el EU AI Act.</span><span class="en">On premises mandatory for critical projects: public sector and high-risk uses under the EU AI Act.</span></li>
-        </ul>
-      </div>
-      <div class="st s4" data-n="2.4"><h4><span class="es">Formar y usar bien</span><span class="en">Train and use properly</span><small><span class="es">Lo que depende de las personas.</span><span class="en">What depends on people.</span></small></h4>
-        <ul>
-          <li><span class="es">Conciencia de los riesgos específicos, como la inyección de prompt (texto escondido en un documento que da órdenes al modelo), mitigada con filtros de modelos intermedios.</span><span class="en">Awareness of the specific risks, such as prompt injection (text hidden in a document that gives the model orders), mitigated with intermediate model filters.</span></li>
-          <li><span class="es">Límites de uso para los empleados: qué no se pega nunca en un prompt.</span><span class="en">Usage limits for employees: what never gets pasted into a prompt.</span></li>
-        </ul>
-      </div>
-      </div>
-      <div class="iso">ISO/IEC 27001 · TISAX · <span class="es">RGPD</span><span class="en">GDPR</span> · EU AI Act</div>
-    </div></div>
-    <div class="pilar p3"><div class="n">3</div><div class="c">
-      <h3><span class="es">Verificación y riesgo: el error tiene límite</span><span class="en">Verification and risk: error has a limit</span></h3>
-      <p><span class="es">La tecnología no es determinista y los resultados no son reproducibles con fiabilidad. Precisamente por eso el análisis tiene que estar por escrito.</span><span class="en">The technology is not deterministic and its results are not reliably reproducible. That is precisely why the analysis has to be in writing.</span></p>
-      <ul>
-        <li><span class="es"><strong>Estudio de fiabilidad del modelo, por escrito</strong>: ground truth, acierto medido, falsos positivos y negativos, límites aceptables. Algunas auditorías lo piden; yo lo hago siempre.</span><span class="en"><strong>Model reliability study, in writing</strong>: ground truth, measured accuracy, false positives and negatives, acceptable limits. Some audits ask for it; I always do it.</span></li>
-        <li><span class="es"><strong>Verificación determinista</strong> de cada salida por código, contra la fuente.</span><span class="en"><strong>Deterministic verification</strong> of every output in code, against the source.</span></li>
-        <li><span class="es"><strong>Estadísticas de desvío</strong>: si el modelo empieza a responder distinto, se ve en los números antes que en el cliente. Revisión periódica del proceso.</span><span class="en"><strong>Drift statistics</strong>: if the model starts answering differently, it shows in the numbers before it shows in the customer. Periodic review of the process.</span></li>
-        <li><span class="es"><strong>Compromisos concretos con el proveedor</strong>: SLA con cambio de modelo si la tarea se desvía; estabilidad de versiones y preaviso.</span><span class="en"><strong>Concrete commitments with the provider</strong>: an SLA with a model change if the task drifts; version stability and advance notice.</span></li>
-        <li><span class="es"><strong>Análisis de riesgos auditado</strong> y medidas explícitas para cuando algo falla: degradar, marcar, parar. Firma humana antes de producción.</span><span class="en"><strong>Audited risk analysis</strong> and explicit measures for when something fails: degrade, flag, stop. Human signature before production.</span></li>
-      </ul>
-      <div class="iso">ISO/IEC 23894</div>
-    </div></div>
-  </div>
-  <p class="l" style="margin-top:22px;font-weight:600;font-size:.95rem">
-    <span class="es"><a href="https://github.com/epifaneia/ctsm/blob/main/README.es.md#seguridad-y-regulaci%C3%B3n">El capítulo de custodia de cada README cuenta cómo se aplica en cada herramienta →</a></span>
-    <span class="en"><a href="https://github.com/epifaneia/ctsm#security--regulation">The custody chapter of every README tells how it is applied in each tool →</a></span>
-  </p>
-</section>
-
 <!-- ================= REPOS ================= -->
 <section id="repos">
   <h2><span class="k"><span class="es">Las pruebas, en el código</span><span class="en">The proof, in code</span></span>
-    <span class="es">Nueve repositorios públicos</span><span class="en">Nine public repositories</span></h2>
+    <span class="es">Lo que he construido</span><span class="en">What I have built</span></h2>
   <p class="lede">
-    <span class="es">Datos públicos, cifras medidas, y en cada app de IA una sección de limitaciones.</span><span class="en">Public data, measured numbers, and in every AI app a section of limitations.</span>
+    <span class="es">Todo público: el código, los datos, las cifras medidas y, en cada app de IA, lo que no hace. Donde se puede probar sin instalar nada, el enlace está en la tarjeta.</span><span class="en">All public: the code, the data, the measured numbers and, in every AI app, what it does not do. Where you can try it without installing anything, the link is on the card.</span>
   </p>
   <h3 class="grupo"><span class="es">IA · los cinco pasos</span><span class="en">AI · the five steps</span></h3>
   <div class="repos">
@@ -400,9 +270,9 @@ footer .sutil a{color:#8a8f96}
   <h3 class="grupo"><span class="es">Código · integrado con lo que ya usa una empresa</span><span class="en">Code · wired into what a company already uses</span></h3>
   <div class="repos">
     <div class="repo dest">
-      <div class="k"><span class="es">Código · integración con un ERP</span><span class="en">Code · ERP integration</span></div>
+      <div class="k"><span class="es">Código · prueba de concepto con un ERP</span><span class="en">Code · ERP proof of concept</span></div>
       <h3>Ordena</h3>
-      <p><span class="es">Un correo a medias o una nota de voz de WhatsApp entra en Business Central como pedido sin registrar: cliente, artículos y fecha resueltos por código contra los maestros del ERP, lo dudoso marcado y una persona que valida. Modelo y transcripción en local, autenticación con Entra ID y siete decisiones de diseño documentadas, de «Business Central o ERP a medida» a «hacer o comprar».</span><span class="en">A half-written email or a WhatsApp voice note lands in Business Central as an unposted sales order: customer, items and date resolved in code against the ERP's master data, anything doubtful flagged, and a person who validates. Local model and transcription, Entra ID authentication and seven documented design decisions, from "Business Central or a custom ERP" to "build or buy".</span></p>
+      <p><span class="es">Un correo a medias o una nota de voz de WhatsApp entra en Business Central como pedido sin registrar: cliente, artículos y fecha resueltos por código contra los maestros del ERP, lo dudoso marcado y una persona que valida. Modelo y transcripción en local, autenticación con Entra ID y siete decisiones de diseño documentadas, de «Business Central o ERP a medida» a «hacer o comprar». Sobre los datos de demostración de Microsoft.</span><span class="en">A half-written email or a WhatsApp voice note lands in Business Central as an unposted sales order: customer, items and date resolved in code against the ERP's master data, anything doubtful flagged, and a person who validates. Local model and transcription, Entra ID authentication and seven documented design decisions, from "Business Central or a custom ERP" to "build or buy". On Microsoft's demo data.</span></p>
       <p class="l"><a href="https://github.com/epifaneia/ordena">github.com/epifaneia/ordena →</a></p>
     </div>
     <div class="repo">
@@ -427,22 +297,81 @@ footer .sutil a{color:#8a8f96}
       <p class="l"><a href="https://github.com/epifaneia/neuralib">github.com/epifaneia/neuralib →</a></p>
     </div>
     <div class="repo">
-      <div class="k"><span class="es">ML · red convolucional</span><span class="en">ML · convolutional network</span></div>
+      <div class="k"><span class="es">ML · se prueba en el navegador</span><span class="en">ML · try it in the browser</span></div>
       <h3>Mildew</h3>
       <p><span class="es">Mi clasificador de hojas de cerezo de 2024, una CNN en Keras, rescatado. Al rehacerlo encontré dos filtraciones entre entrenamiento y test: 1.393 imágenes duplicadas en el dataset y aumento de datos antes de partir. Cerradas, acierta 879 de 879 en test, y el propio notebook comprueba que no queden casi duplicados. Tres notebooks guardados con sus salidas y una app en Streamlit.</span><span class="en">My 2024 cherry leaf classifier, a CNN in Keras, rescued. Rebuilding it, I found two leaks between training and test: 1,393 duplicated images in the dataset and augmentation before the split. With both closed it gets 879 of 879 on test, and the notebook itself checks that no near duplicates remain. Three notebooks saved with their outputs and a Streamlit app.</span></p>
       <p class="l"><a href="https://mildew-8ygp4es5aitvvhp8buud32.streamlit.app"><span class="es">Probar la app →</span><span class="en">Try the app →</span></a> · <a href="https://github.com/epifaneia/mildew">github.com/epifaneia/mildew →</a></p>
     </div>
   </div>
   <h3 class="grupo"><span class="es">El método, aguantando el cambio</span><span class="en">The method, under change</span></h3>
-  <div class="repos">
-    <div class="repo">
-      <div class="k"><span class="es">Código · proyecto personal</span><span class="en">Code · personal project</span></div>
+  <div class="repos uno">
+    <div class="repo dest">
+      <div class="k"><span class="es">Juego de rol · años de proyecto personal</span><span class="en">Tabletop RPG · years of personal work</span></div>
       <h3>NOGUM</h3>
-      <p><span class="es">Los mismos pilares en un corpus que no para quieto: 210 páginas en dos idiomas, cuatro productos derivados de una sola fuente y una aplicación que consume datos extraídos del propio libro. El modelo interpreta, el código determinista verifica: puertas que paran la compilación cuando el documento y los datos dejan de decir lo mismo, y 189 decisiones de diseño trazadas con su porqué. Meses cambiando a diario, y las puertas siguen cazando desincronizaciones que ninguna lectura humana había visto. La prueba de que el método aguanta el cambio, no solo la demo.</span><span class="en">The same pillars on a corpus that never sits still: 210 pages in two languages, four products from a single source and an app that consumes data extracted from the book itself. The model interprets, deterministic code verifies: gates that stop the build when the document and the data stop saying the same thing, and 189 design decisions traced with their rationale. Months of daily change, and the gates still catch drift no human reading had spotted. Proof that the method survives change, not just the demo.</span></p>
-      <p class="l"><a href="https://github.com/epifaneia/nogum">github.com/epifaneia/nogum →</a> · <a href="https://epifaneia.dev/nogum/"><span class="es">consultarlo</span><span class="en">read it</span> →</a></p>
+      <p><span class="es">Mi juego de rol de mesa, y los mismos pilares en un corpus que no para quieto: 210 páginas en dos idiomas, cuatro productos derivados de una sola fuente y una aplicación que consume datos extraídos del propio libro. El modelo interpreta, el código determinista verifica: puertas que paran la compilación cuando el documento y los datos dejan de decir lo mismo, y 189 decisiones de diseño trazadas con su porqué. Meses cambiando a diario, y las puertas siguen cazando desincronizaciones que ninguna lectura humana había visto. La prueba de que el método aguanta el cambio, no solo la demo.</span><span class="en">My tabletop role-playing game, and the same pillars on a corpus that never sits still: 210 pages in two languages, four products from a single source and an app that consumes data extracted from the book itself. The model interprets, deterministic code verifies: gates that stop the build when the document and the data stop saying the same thing, and 189 design decisions traced with their rationale. Months of daily change, and the gates still catch drift no human reading had spotted. Proof that the method survives change, not just the demo.</span></p>
+      <p class="l"><a href="https://epifaneia.dev/nogum/idea.html"><span class="es">La idea en cinco minutos →</span><span class="en">The idea in five minutes →</span></a> · <a href="https://epifaneia.dev/nogum/juego.html"><span class="es">el libro →</span><span class="en">the book →</span></a> · <a href="https://epifaneia.dev/nogum/app.html"><span class="es">la app →</span><span class="en">the app →</span></a> · <a href="https://github.com/epifaneia/nogum">github.com/epifaneia/nogum →</a></p>
     </div>
   </div>
   <p class="cierre"><span class="es">Mido primero. Decido sobre evidencia.</span><span class="en">I measure first. I decide on evidence.</span></p>
+</section>
+
+<!-- ================= CINCO PASOS ================= -->
+<section id="pasos">
+  <h2><span class="k"><span class="es">El método</span><span class="en">The method</span></span>
+    <span class="es">Cualquier app con IA tiene cinco pasos</span><span class="en">Every AI app has five steps</span></h2>
+  <p class="lede">
+    <span class="es">A veces uno está vacío, a veces dos van pegados, pero están. Antes de construir, la pregunta es siempre la misma: ¿en cuál de los cinco hay una mejora enorme esperando? Casi nunca es en el cuarto.</span>
+    <span class="en">Sometimes one is empty, sometimes two are glued together, but they are always there. Before building, the question is always the same: which of the five holds the big improvement? Almost never the fourth.</span>
+  </p>
+  <div class="pasos">
+    <div class="paso"><b>1 · <span class="es">Limpieza</span><span class="en">Cleaning</span></b><span class="es">Lo que llega (PDF, audio, correo, Excel) se convierte en texto íntegro con metadatos: página, minuto, hablante, fecha.</span><span class="en">Whatever arrives (PDF, audio, email, spreadsheets) becomes complete text with metadata: page, minute, speaker, date.</span></div>
+    <div class="paso"><b>2 · <span class="es">Contexto</span><span class="en">Context</span></b><span class="es">El modelo recibe lo justo, identificado, y no se paga dos veces por lo mismo.</span><span class="en">The model gets exactly what it needs, addressable by id, and nothing is paid for twice.</span></div>
+    <div class="paso"><b>3 · <span class="es">Guardarraíl de entrada</span><span class="en">Input guardrail</span></b><span class="es">Lo que el modelo puede decir se acota antes de que hable: esquema, enumeraciones cerradas sacadas de la fuente, presupuesto.</span><span class="en">What the model may say is bounded before it speaks: schema, closed enums taken from the source, budget.</span></div>
+    <div class="paso llm"><b>4 · <span class="es">Proceso</span><span class="en">Process</span></b><span class="es">La llamada. Una, acotada. Cadenas, bucles o agentes solo cuando lo anterior no llega, y diciendo por qué.</span><span class="en">The call. One, bounded. Chains, loops or agents only when that does not suffice, and saying why.</span></div>
+    <div class="paso"><b>5 · <span class="es">Guardarraíl de salida</span><span class="en">Output guardrail</span></b><span class="es">Lo que dijo el modelo se verifica por código contra la fuente. Ante la duda, se degrada y se marca. Nunca se corrige.</span><span class="en">What the model said is verified in code against the source. When in doubt, degrade and flag. Never patch.</span></div>
+  </div>
+  <div class="leyenda">
+    <span><i style="background:var(--verde)"></i><span class="es">determinista · el código garantiza</span><span class="en">deterministic · code guarantees</span></span>
+    <span><i style="background:var(--ambar)"></i><span class="es">el modelo interpreta</span><span class="en">the model interprets</span></span>
+  </div>
+  <p style="margin-top:22px">
+    <span class="es"><strong>Lo medido.</strong> Con los pasos 1, 2, 3 y 5 bien hechos, lo que queda en medio cabe en una llamada simple. En CTSM, un modelo local de 14B, en una GPU de 6 GB apoyada en la CPU y a unos dos minutos por requisito, acierta los 9 requisitos de la prueba contra un ground truth hecho a mano, sin un solo falso «cumple». El paso 5 caza lo que un umbral de parecido deja pasar: el modelo citó «4 to 16 MHz» y el manual dice «3 to 25». En reqif-extractor, sin el paso 5, el modelo inventaba 167 de 170 identificadores.</span>
+    <span class="en"><strong>Measured.</strong> With steps 1, 2, 3 and 5 done properly, what is left in the middle fits in one simple call. In CTSM, a local 14B model, on a 6 GB GPU helped by the CPU at about two minutes per requirement, gets all 9 test requirements right against a hand-built ground truth, with not a single false "compliant". Step 5 catches what a similarity threshold lets through: the model quoted "4 to 16 MHz" and the manual says "3 to 25". In reqif-extractor, without step 5, the model invented 167 of 170 identifiers.</span>
+  </p>
+</section>
+
+<!-- ================= REGULACIÓN ================= -->
+<section id="regulacion">
+  <h2><span class="k"><span class="es">Regulación</span><span class="en">Regulation</span></span>
+    <span class="es">Diseñado para auditarse</span><span class="en">Built to be audited</span></h2>
+  <p class="lede">
+    <span class="es">Lo que la norma pide de un sistema con IA es lo que siempre pidió de un sistema crítico: saber quién hizo qué, que el dato no se escape y que el error tenga límite. Esto es lo que ya hace el código en los pipelines de IA (CTSM, reqif-extractor, el estudio de viabilidad, askhub y el kit). Lo que no es código, contratos, procesos y formación, está <a href="servicios.html#regulacion">aquí</a>.</span>
+    <span class="en">What regulation asks of a system with AI is what it always asked of a critical system: know who did what, keep the data from escaping and put a limit on error. This is what the code already does in the AI pipelines (CTSM, reqif-extractor, the feasibility study, askhub and the kit). The part that is not code, contracts, processes and training, is <a href="servicios.html#regulacion">here</a>.</span>
+  </p>
+  <div class="grid3">
+    <div class="card b">
+      <span class="cab"><span class="es">1 · Trazabilidad</span><span class="en">1 · Traceability</span></span>
+      <h3><span class="es">Quién hizo qué</span><span class="en">Who did what</span></h3>
+      <p><span class="es">Cada llamada al modelo deja una línea en un registro de custodia: quién la lanzó, con qué motor, si el dato salió de la máquina, su tamaño y su hash. Nunca el texto. Y una firma que se verifica antes de entregar.</span><span class="en">Every model call leaves a line in a custody ledger: who ran it, on which engine, whether the data left the machine, its size and its hash. Never the text. And a signature that is verified before delivery.</span></p>
+      <div class="iso">ISO/IEC 42001</div>
+    </div>
+    <div class="card s">
+      <span class="cab"><span class="es">2 · Custodia del dato</span><span class="en">2 · Data custody</span></span>
+      <h3><span class="es">Dónde vive y quién lo ve</span><span class="en">Where it lives and who sees it</span></h3>
+      <p><span class="es">Modelo en local por defecto en CTSM y Ordena. Cuando algo va a la nube, el README lo dice y el registro lo apunta. Ninguna clave en el código ni en git.</span><span class="en">Local model by default in CTSM and Ordena. When something goes to the cloud, the README says so and the ledger records it. No keys in the code or in git.</span></p>
+      <div class="iso">ISO/IEC 27001 · TISAX · <span class="es">RGPD</span><span class="en">GDPR</span> · EU AI Act</div>
+    </div>
+    <div class="card o">
+      <span class="cab"><span class="es">3 · Verificación y riesgo</span><span class="en">3 · Verification and risk</span></span>
+      <h3><span class="es">El error tiene límite</span><span class="en">Error has a limit</span></h3>
+      <p><span class="es">Cada cita se comprueba por código contra la fuente; lo que no se sostiene se degrada y se marca, nunca se corrige. Cada herramienta lleva su medición contra un ground truth y sus limitaciones por escrito.</span><span class="en">Every quote is checked in code against the source; whatever does not hold is downgraded and flagged, never patched. Every tool carries its measurement against a ground truth and its limitations in writing.</span></p>
+      <div class="iso">ISO/IEC 23894</div>
+    </div>
+  </div>
+  <p class="l" style="margin-top:22px;font-weight:600;font-size:.95rem">
+    <span class="es"><a href="https://github.com/epifaneia/ctsm/blob/main/README.es.md#seguridad-y-regulaci%C3%B3n">El capítulo de seguridad de cada README, herramienta por herramienta →</a></span>
+    <span class="en"><a href="https://github.com/epifaneia/ctsm#security--regulation">The security chapter of every README, tool by tool →</a></span>
+  </p>
 </section>
 
 <!-- ================= EL VIAJE ================= -->
@@ -483,6 +412,7 @@ footer .sutil a{color:#8a8f96}
     <dt>2017 – 2023</dt><dd><span class="es">Análisis de riesgo, calidad y formación en Irlanda y España; QA de software y líder de equipo en Media Interactiva.</span><span class="en">Risk analysis, quality and training in Ireland and Spain; software QA and team lead at Media Interactiva.</span></dd>
     <dt><span class="es">Antes</span><span class="en">Before</span></dt><dd><span class="es">Física y Filosofía en la Universidad de Sevilla.</span><span class="en">Physics and Philosophy at the University of Seville.</span></dd>
   </dl>
+  <p class="herr"><span class="es">Con qué trabajo:</span><span class="en">What I work with:</span> Python · pandas · SQL · PostgreSQL <span class="es">con</span><span class="en">with</span> pgvector · FastAPI · Django · Streamlit · Keras · Ollama · Gemini · ReqIF/XML (lxml) · Docling · PyMuPDF · Git</p>
   <p class="l" style="font-weight:600;font-size:.95rem"><span class="es"><a href="cv/Daniel_Martin_AI_Engineer_ES.pdf">CV en PDF →</a> · <a href="cv/Daniel_Martin_AI_Engineer_EN.pdf">in English →</a> · <a href="https://github.com/epifaneia/cv">el código que lo genera →</a></span><span class="en"><a href="cv/Daniel_Martin_AI_Engineer_EN.pdf">CV as PDF →</a> · <a href="cv/Daniel_Martin_AI_Engineer_ES.pdf">en español →</a> · <a href="https://github.com/epifaneia/cv">the code that builds it →</a></span></p>
   <p>
     <span class="es">Cada vuelta entrega algo usable. Cada día mejora. Hoy ya se puede usar.</span>
